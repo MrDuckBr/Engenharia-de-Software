@@ -1,6 +1,6 @@
-# MoreBem
+# ConstruBem
 #### Descrição:
-Com a pandemia o distanciamento social impede pessoas de procurarem novas moradias, pois imobiliarias estão fechadas o MoreBem, visa resolver este problema onde o cliente pode ver a casa com detalhes e alugar ou comprar com apenas um clique.
+ContruBem é uma empresa que fornece serviços tercerizado através de um site
 
 #### Tecnologias usadas
 ```sh
