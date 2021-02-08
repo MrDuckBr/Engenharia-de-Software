@@ -18,3 +18,12 @@ Banco de dados: MySql <versão>
     -Dev: Usada durante o desenvolvimento do projeto, deve conter sempre a versão mais atualizada do projeto.
     -Release: Contém a versão estavel do projeto, feitas na forma de X.X.X
 ```
+```sh
+.
+├── Padrões Adotados
+│   └── Regra de Verificação  e Analise de Requisitos.pdf
+├── README.md
+└── Requisitos
+    ├── Documento_Requisitos_ConstruBem.docx
+    └── Documento_Requisitos_ConstruBem.pdf
+```
