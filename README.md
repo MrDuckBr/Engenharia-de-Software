@@ -17,7 +17,6 @@ Banco de dados: PostgreSQL
     -Dev: Usada durante o desenvolvimento do projeto, deve conter sempre a versão mais atualizada do projeto.
     -Release: Contém a versão estavel do projeto, feitas na forma de X.X.X
 ```
-```sh
 
 #### Padrões
 ```sh
@@ -36,7 +35,6 @@ Banco de dados: PostgreSQL
 ```
 #### Derivação de pastas
 ```sh
-.
 .
 ├── Back-end
 │   ├── nodemon.json
