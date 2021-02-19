@@ -1,22 +1,16 @@
-import express, { Router } from 'express'
-import bodyParser from 'body-parser'
+import express, { Router } from 'express';
+import bodyParser from 'body-parser';
+import { Funcionario } from '@/app/controllers';
+
 
 const app = express();
-const router = new Router();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-router.get('/', (request, response) => {
-    response.send({message: 'hello'})
-})
-
-app.use(router)
+app.use('/funcionario', Funcionario);
 
 app.listen(port, () => {
-    console.log(`Servidor rodando no link http://localhost:${port}`);
+  console.log(`Servidor rodando no link http://localhost:${port}`);
 });
-
-
-
-
