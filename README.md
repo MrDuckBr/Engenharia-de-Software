@@ -32,6 +32,7 @@ Banco de dados: PostgreSQL
 	3 - Evitar uso de comentários no código
 	4 - Explicitar o máximo possível o que o método faz
 	5 - Editar as mensagens de erro para o usuário
+	6 - Os métodos devem ser simples, curtos e objetivos.
 ```
 #### Derivação de pastas
 ```sh
