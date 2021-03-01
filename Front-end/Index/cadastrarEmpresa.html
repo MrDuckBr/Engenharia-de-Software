@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos/cadastrarUsuario.css" rel="stylesheet">
+
+    <title>ConstruBem - CadastroEmpresa</title>
+</head>
+<body>
+
+    <div class="barra-titulo">
+        <h1 class="titulo"> ConstruBem</h1>
+        <h3 class="subtitulo">Empresa</h3>
+    </div>
+    <div class="fundo">
+        <div class="caixa-centro">
+            <div class="preencher">Preencha todos os campos</div>
+            <form action="POST">
+                <div class="text">Nome</div>
+                    <input class="campo" placeholder="Digite seu nome" type="text" required>
+                <div class="text">CNPJ</div>
+                <input class="campo" placeholder="XXX.XXX.XXX-XX" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                <div class="text">Email</div>
+                <input class="campo" placeholder="nome@email.com" type="text" required>
+                <div class="text">Senha</div>
+                    <input class="campo" placeholder="*********" type="password" required>
+                    <br>
+                <input type="submit" value="Cadastrar" class="botao">
+            </form>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
