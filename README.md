@@ -28,11 +28,11 @@ Banco de dados: PostgreSQL
 #### Boas Práticas
 ```sh
 	1 - Realizar testes em todas as rotas criadas
-	2 - Identação correta do código
-	3 - Evitar uso de comentários no código
-	4 - Explicitar o máximo possível o que o método faz
-	5 - Editar as mensagens de erro para o usuário
-	6 - Os métodos devem ser simples, curtos e objetivos.
+	2 - Identação correta do código, utilizar 4 espaços, para 1 tab
+	3 - Escrever código que seja auto explicativo.
+	4 - Explicitar o máximo possível o que o método faz.
+	5 - Mensagens de erro do backend devem ter tratamento, para que chegue uma mensagem padrão ao usuário
+	6 - Os métodos devem ter apenas umas funcionalidade cada.
 ```
 #### Derivação de pastas
 ```sh
