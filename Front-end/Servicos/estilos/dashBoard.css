@@ -26,6 +26,23 @@
     background: #C4C4C4;
 }
 
+.button-titulo{
+    border-radius: 20px;
+    width: 10%;
+    height: 50px;
+    margin-top: 3%;
+    margin-left: 88%;
+    background: gray;
+    color: white;
+    outline: none;
+
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 25px;
+
+}
+
 
 .fundo{
     position: absolute;
@@ -53,7 +70,7 @@
     margin-top: 1%;
     width: 17%;
     height: 88%;
-    background: #8C8686;
+    background: #c4c4c4;
     border-radius: 25px;
 }
 
@@ -63,7 +80,8 @@
     height: 50px;
     margin-top: 10%;
     margin-left: 15%;
-    background: white;
+    background: gray;
+    color: white;
     outline: none;
 
     font-family: 'Baloo 2', cursive;
