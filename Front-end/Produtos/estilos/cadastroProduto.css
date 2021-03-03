@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Krona+One&display=swap');
+
+.titulo{
+    position: absolute;
+    width: 450px;
+    height: 20px;
+    left: 35%;
+    margin-top: 5%;
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 80px;
+    line-height: 20%;
+
+    color: #000000;
+    
+}
+
+.barra-titulo{
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    left: 0px;
+    top: 0px;
+
+    background: #C4C4C4;
+}
+
+.button-titulo{
+    border-radius: 20px;
+    width: 10%;
+    height: 50px;
+    margin-top: 3%;
+    margin-left: 88%;
+    background: gray;
+    color: white;
+    outline: none;
+
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 25px;
+
+}
+
+
+.fundo{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    left: 0px;
+    top: 20%;
+
+    background: #4F4747;
+}
+
+
+.caixa-centro{
+    margin-left: 20%;
+    margin-top: -18.5%;
+    width: 78%;
+    height: 70%;
+    background: #c4c4c4;
+    border-radius: 25px;
+    
+}
+
+.campo-field{
+    border-radius: 20px;
+    width: 120px;
+    height: 100%; 
+    margin-left: 5%;
+    outline: none;
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 21px;
+    
+
+}
+
+.campos{
+    margin-left: 6%;
+    width: 20%;
+    height: 5%;
+    background: white;
+    border-radius: 25px;
+    outline: none;
+}
+
+.barra-lateral{
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 17%;
+    height: 50%;
+    background: #c4c4c4;
+    border-radius: 25px;
+}
+
+
+
+.botoes-lateral{
+    border-radius: 20px;
+    width: 75%;
+    height: 50px;
+    margin-top: 10%;
+    margin-left: 15%;
+    background: gray;
+    color: white;
+    outline: none;
+
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+button:hover{
+    background-color: gray;
+    color: white;
+}
+
+
+
+.botao-centro{
+    border-radius: 20px;
+    width: 20%;
+    height: 35px;
+    margin-top: 8%;
+    margin-left: 40%;
+    background: white;
+    outline: none;
+
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 18px;
+
+}
