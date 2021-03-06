@@ -17,6 +17,14 @@ const ServicoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user:{
+    type: String,
+    required: true
+  },
+  func: {
+    type: String,
+    required: true
+  }
 });
 
 export default mongoose.model('Servico', ServicoSchema);

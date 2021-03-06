@@ -1,13 +1,29 @@
 import mongoose from '@/database';
 
 const ProdutoSchema = new mongoose.Schema({
-  nome: {
+  nomeProd1: {
     type: String,
-    required: true,
+    defalt: ""
   },
-  quantidade: {
+  qtd1: {
     type: Number,
-    required: true,
+    default: 0
+  },
+  nomeProd2: {
+    type: String,
+    defalt: ""
+  },
+  qtd2: {
+    type: Number,
+    default: 0
+  },
+  nomeProd3: {
+    type: String,
+    defalt: ""
+  },
+  qtd3: {
+    type: Number,
+    default: 0
   }
 });
 

@@ -18,10 +18,10 @@ router.post('/', (request, response) => {
 
   FuncionarioSchema.create({nome, funcao})
   .then((novoFuncionario) =>{
-    console.log(novoFuncionario)
     response.send(novoFuncionario)
   })
   .catch((error) => {
+    console.log(error)
     response.send({message: "Erro ao cadastrar funcionário"})
   })
 })

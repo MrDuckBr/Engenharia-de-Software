@@ -10,13 +10,18 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    documento: {
+      type: String,
+      required: true,
+      default: 'xxx.xxx.xxx-xx'
+    },
     password:{
       type: String,
       required: true,
     },
     descricaoServico: {
       type: String,
-      default: null,
+      required: false,
     }
 });
 

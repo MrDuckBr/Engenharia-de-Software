@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (request, response) => {
-  const {nome, quantidade} = request.body
+  const {nomeProd1, qtd1, nomeProd2, qtd2, nomeProd3, qtd3} = request.body
 
-  ProdutoSchema.create({nome, quantidade})
+  ProdutoSchema.create({nomeProd1, qtd1, nomeProd2, qtd2, nomeProd3, qtd3})
   .then((novoProduto) =>{
     response.send(novoProduto)
   })
@@ -40,8 +40,8 @@ router.delete('/:id',(req,res)=>{
 
 router.put('/:id',(req,res)=>{
   const id = req.params.id
-  const {nome, quantidade} = req.body
-  ProdutoSchema.findByIdAndUpdate(id, {nome, quantidade},{new:true})
+  const {qtd1, qtd2, qtd3} = req.body
+  ProdutoSchema.findByIdAndUpdate(id, {$inc: {qtd1: qtd1, qtd2: qtd2, qtd3: qtd3}},{new:true})
   .then((Produto)=>{
     res.send(Produto)
   })

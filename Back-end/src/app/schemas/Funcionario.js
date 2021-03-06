@@ -10,7 +10,8 @@ const FuncionarioSchema = new mongoose.Schema({
     required: true,
   },
   avaiable: {
-    type: Boolean
+    type: Boolean,
+    default: true
   }
 });
 

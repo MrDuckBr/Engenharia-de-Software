@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
      return {
         id: user._id,
         nome: user.nome, 
-        email: user.email, 
+        email: user.email,
+        documento: user.documento, 
         senha: user.password, 
         descricaoServico: user.descricaoServico}
     })
@@ -25,9 +26,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/register', (request, response) => {
-  const {nome, email, password} = request.body
+  const {nome, email, documento, password} = request.body
 
-  UserSchema.create({nome, email, password})
+  UserSchema.create({nome, email, documento, password})
   .then((novoUser) =>{
     response.send(novoUser)
   })
@@ -71,7 +72,7 @@ router.post('/login', (request, response) => {
 
 router.delete('/:id',(req,res)=>{
   const id = req.params.id
-  UserSchema.findByIdAndRemove(id)
+  UserSchema.findByIdAndUpdate(id, {descricaoServico: null}, {new: true})
   .then((User)=>{
     res.send(User)
   })
@@ -83,8 +84,8 @@ router.delete('/:id',(req,res)=>{
 
 router.put('/:id',(req,res)=>{
   const id = req.params.id
-  const {nome,email,password} = req.body
-  FuncionarioSchema.findByIdAndUpdate(id, {nome, email, password},{new:true})
+  const {nome,email,documento, password} = req.body
+  FuncionarioSchema.findByIdAndUpdate(id, {nome, email, docurmento, password},{new:true})
   .then((User)=>{
     res.send(User)
   })
