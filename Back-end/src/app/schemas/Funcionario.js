@@ -5,13 +5,13 @@ const FuncionarioSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
   funcao:{
     type: String,
     required: true,
+  },
+  avaiable: {
+    type: Boolean,
+    default: true
   }
 });
 
