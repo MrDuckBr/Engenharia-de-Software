@@ -20,16 +20,39 @@
             <button class="botoes-lateral">Produtos</button> <br>
             <button class="botoes-lateral">Serviços</button> <br>
         </div>
+
         <div class="caixa-centro">
+        <table>
             <form action="" method="post">
-            <div class="campo-field" >Nome</div>
-            <input type="text" class="campos"> 
-            <div class="campo-field">Email</div> 
-            <input type="text"  placeholder="nome@email.com" type="text" required class="campos"> 
-            <div class="campo-field">Função</div> 
-            <input type="text" class="campos"> 
-            <div><button type="submit" class="botao-centro">Cadastrar</button></div>
-        </form>
+        <tr>
+            <td class="campo-field" >Nome</td>
+            <td class="campo-field" >Nome</td>
+            <td class="campo-field" >Nome</td>
+        </tr>
+        <tr>
+            <td><input type="text" class="campos" value="Prego" disabled> </td>
+            <td><input type="text" class="campos" value="Tijolo" disabled> </td>
+            <td><input type="text" class="campos" value="Cimento" disabled> </td>
+            
+        </tr>
+        <tr>
+            <td class="campo-field">Quantidade</td>
+            <td class="campo-field">Quantidade</td>
+            <td class="campo-field">Quantidade</td>
+        </tr>
+        <tr>
+            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+        </tr>
+        <tr>
+            <td><button type="submit" class="botao-centro">Cadastrar</button></td>
+        </tr>
+        
+    </form>
+        </table>
+    </div>
+               
         </div>
 
     </div>
