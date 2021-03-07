@@ -5,15 +5,32 @@
     return  request.responseText
 }
 
-function criaLinha(usuario){
+function criaLinha(usuario,valor){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdFuncao = document.createElement("td")
+    botao = document.createElement("button")
+    botao.setAttribute('type','button')
+    botao.appendChild(document.createTextNode('Atualizar'));
+    botao.onclick = function(){
+        console.log(valor)
+         atualizar(valor)
+     }
+    
+    button = document.createElement("button")
+    button.setAttribute('type','button')
+    button.appendChild(document.createTextNode('Deletar'));
+    button.onclick = function(){
+       console.log(valor)
+        deletar(valor)
+    }
     tdNome.innerHTML = usuario.nome
     tdFuncao.innerHTML = usuario.funcao
 
     linha.appendChild(tdNome)
     linha.appendChild(tdFuncao)
+    linha.appendChild(botao)
+    linha.appendChild(button)
 
     return linha
 }
@@ -22,12 +39,15 @@ function main(){
     const a = fazGet("http://localhost:3000/funcionario")
      let b =JSON.parse(a)
      
+     
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
-
      b.forEach(element => {
-         let linha = criaLinha(element)
+         let valor = b['0']['_id']
+         let linha = criaLinha(element, valor)
+         
          tabela.appendChild(linha)
+         
      });
      
     
@@ -51,7 +71,7 @@ function fazerPost(){
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', "http://localhost:3000/funcionario/");
-        http.setRequestHeader('Content-type', 'application/json')
+        xhr.setRequestHeader('Content-type', 'application/json')
        
         
 
@@ -70,4 +90,24 @@ function fazerPost(){
 
 
 
+function deletar(usuario){
+    var xhr = new XMLHttpRequest();
+    xhr.open('DELETE', "http://localhost:3000/funcionario/"+ usuario);
+    xhr.setRequestHeader('Content-type', 'application/json')
+   
+   xhr.send()
+    xhr.onload = function () {
+        
+        alert('Funcionario Deletado')
+        main()
+        
+    };
+ 
+}
 
+
+
+
+function atualizar(){
+    
+}
