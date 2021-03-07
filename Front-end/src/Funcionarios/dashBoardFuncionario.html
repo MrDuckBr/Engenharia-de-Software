@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/dashBoard.css" rel="stylesheet">
-
     <title>ConstruBem - Login</title>
 </head>
 <body>
@@ -16,19 +15,32 @@
     </div>
     <div class="fundo">
         <div class="barra-lateral">
-            <button class="botoes-lateral" > Funcionários</button> <br>
+            <button id="func"  class="botoes-lateral" onclick="getNomeFunc()">Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
             <button class="botoes-lateral">Serviços</button> <br>
             <button class="botoes-lateral">Usuários</button> <br>
 
             <button class="cadastrar">Cadastrar</button>
         </div>
-        <div class="caixa-centro">
+        <div id="caixa" class="caixa-centro">
             
         </div>
 
     </div>
-
-
 </body>
+
+<script>
+    async function getNomeFunc(){
+        const response = await fetch('http://localhost:3000/funcionario')
+        const data = await response.json()
+        show(data)
+    }
+
+    function show(user){
+        let funcionario = `<div>${user.data}</div>`
+        document.querySelector('#caixa').innerHTML = funcionario
+    }
+
+</script>
+
 </html>
