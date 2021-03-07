@@ -1,3 +1,5 @@
+var idFunc = ""
+ 
  function fazGet(url){
     let request = new XMLHttpRequest()
     request.open("GET",url,false)
@@ -43,7 +45,7 @@ function main(){
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
      b.forEach(element => {
-         let valor = b['0']['_id']
+         let valor = element._id
          let linha = criaLinha(element, valor)
          
          tabela.appendChild(linha)
@@ -79,7 +81,8 @@ function fazerPost(){
 
         xhr.onload = function () {
             
-            alert(xhr.responseText)
+            alert('Funcionario Cadastrado')
+            window.location.assign('dashBoardFuncionario.html')
         };
      })
 
@@ -107,7 +110,43 @@ function deletar(usuario){
 
 
 
-
-function atualizar(){
+function fazAtualiza(idFunc){
     
+    let name =  document.querySelector("#nome-campo")
+   let func = document.querySelector("#funcao-campo")
+   let form = document.querySelector("#form")
+
+   form.addEventListener("submit",function(event){
+       event.preventDefault();
+
+       let dados = {
+           nome: name.value,
+           funcao: func.value
+       }
+       console.log(JSON.stringify(dados))
+       console.log(idFunc)
+        var xhr = new XMLHttpRequest();
+        xhr.open('PUT', "http://localhost:3000/funcionario/"+window.location.search.substr(1).split('&'));
+        xhr.setRequestHeader('Content-type', 'application/json')
+       
+        
+
+        xhr.send(JSON.stringify(dados));
+
+        xhr.onload = function () {
+            
+            alert('Funcionario Atualizado')
+            window.location.assign('dashBoardFuncionario.html')
+            main()
+        };
+     })
 }
+
+function atualizar(valor){
+    console.log(valor + "arroz comi to com fome")
+    window.location.assign('atualizarFuncionario.html?'+valor)
+    
+
+}
+
+

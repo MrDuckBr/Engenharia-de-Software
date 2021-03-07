@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/dashBoard.css" rel="stylesheet">
+    <script src="servico.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>ConstruBem - Login</title>
 </head>
 <body>
+
+    <style>
+
+        table, tr, td,button{
+            font-family: 'Baloo 2', cursive;
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 18px;
+            margin-left: 2%;
+           
+            
+        
+        }
+        
+        </style>
+
 
     <div class="barra-titulo">
     <h1 class="titulo"> ConstruBem</h1>
@@ -18,12 +38,13 @@
         <div class="barra-lateral">
             <button class="botoes-lateral" onclick="location.href= '../Funcionarios/dashBoardFuncionario.html'" > Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
-            <button class="botoes-lateral">Serviços</button> <br>
+            <button class="botoes-lateral" onclick="main(); ">Serviços</button> <br>
             <button class="botoes-lateral">Usuários</button> <br>
 
             <button class="cadastrar" onclick="window.location.href = 'cadastros.html'">Cadastrar</button>
         </div>
         <div class="caixa-centro">
+            <table id="table" class="table"></table>
             
         </div>
 
