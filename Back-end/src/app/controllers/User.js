@@ -1,4 +1,4 @@
-import { response, Router } from 'express';
+import { Router } from 'express';
 import UserSchema from '../schemas/User';
 import bcrypt from 'bcryptjs';
 
@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
         email: user.email,
         documento: user.documento, 
         senha: user.password, 
-        descricaoServico: user.descricaoServico}
+        descricaoServico: user.descricaoServico,
+        empresa: user.empresa}
     })
     res.send(users)
   })
@@ -59,14 +60,14 @@ router.post('/login', (request, response) => {
   .then((user) => {
         bcrypt.compare(password, user.password)
         .then((result) => {
-            return response.send({message:'Usuário logado'})
+            return response.send('Usuário logado')
         })
         .catch((error) => {
-            return response.send({message:'Senha incorreta'})
+            return response.send('Senha incorreta')
         })
   })
   .catch((error) => {
-      return response.send({message: 'Usuário inexistente'})
+      return response.send('Usuário inexistente')
   })
 })
 

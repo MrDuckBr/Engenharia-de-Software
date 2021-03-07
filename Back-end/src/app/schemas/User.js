@@ -22,6 +22,10 @@ const UserSchema = new mongoose.Schema({
     descricaoServico: {
       type: String,
       required: false,
+    },
+    empresa: {
+      type: Boolean,
+      default: false
     }
 });
 
