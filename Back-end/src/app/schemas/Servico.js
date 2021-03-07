@@ -23,7 +23,6 @@ const ServicoSchema = new mongoose.Schema({
   },
   func: {
     type: String,
-    required: true
   }
 });
 

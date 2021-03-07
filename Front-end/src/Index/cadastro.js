@@ -13,7 +13,7 @@ function cadastroUser(){
             email : email.value,
             documento: cpf.value,
             password : senha.value,
-            empresa: true
+            empresa: "false"
         }
 
         console.log(JSON.stringify(dados))
@@ -56,7 +56,7 @@ function cadastroEmpresa(){
             email : email.value,
             documento: cnpj.value,
             password : senha.value,
-            empresa: true
+            empresa: "true"
         }
 
         console.log(JSON.stringify(dados))
