@@ -25,7 +25,12 @@ function cadastroUser(){
 
     xhr.onload = function () {
         
-        alert(xhr.responseText)
+       if(xhr.status == 200){
+           alert('Cadastro Efetuado com sucesso')
+        window.location.assign('login.html')
+       }
+       
+
     };
     })
 }

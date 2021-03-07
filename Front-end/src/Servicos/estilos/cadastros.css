@@ -65,7 +65,7 @@
     
 }
 
-.campo{
+.campo-centro{
     margin-left: 6%;
     width: 88%;
     height: 88%;
@@ -121,4 +121,27 @@ button:hover{
     font-weight: bolder;
     font-size: 18px;
 
+}
+
+.campo-field{
+    border-radius: 20px;
+    width: 40%;
+    height: 110%; 
+    margin-left: 0%;
+    outline: none;
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 30px;
+    
+
+}
+
+.campos{
+    margin-left: 0;
+    
+    height: 5%;
+    background: white;
+    border-radius: 25px;
+    outline: none;
 }

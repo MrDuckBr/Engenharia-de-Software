@@ -8,8 +8,9 @@ function login(){
 
         let dados = {
             email : email.value,
-            senha : senha.value
+            password : senha.value
         }
+        console.log(JSON.stringify(dados))
 
 
     var xhr = new XMLHttpRequest();

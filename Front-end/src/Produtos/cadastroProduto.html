@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/cadastroProduto.css" rel="stylesheet">
+    <script src="produto.js"></script>
 
-    <title>ConstruBem - Cadastro Funcionario</title>
+    <title>ConstruBem - Produtos</title>
 </head>
 <body>
 
@@ -16,14 +17,14 @@
     </div>
     <div class="fundo">
         <div class="barra-lateral">
-            <button class="botoes-lateral"> Funcionários</button> <br>
+            <button class="botoes-lateral" onclick="location.href= '../Funcionarios/dashBoardFuncionario.html'"> Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
-            <button class="botoes-lateral">Serviços</button> <br>
+            <button class="botoes-lateral" onclick="location.href= '../Servicos/dashBoard.html'">Serviços</button> <br>
         </div>
 
         <div class="caixa-centro">
         <table>
-            <form action="" method="post">
+            <form id="form" method="post">
         <tr>
             <td class="campo-field" >Nome</td>
             <td class="campo-field" >Nome</td>
@@ -41,12 +42,12 @@
             <td class="campo-field">Quantidade</td>
         </tr>
         <tr>
-            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-            <td> <input type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+            <td> <input id="prego" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+            <td> <input id="tijolo" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
+            <td> <input id="cimento" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
         </tr>
         <tr>
-            <td><button type="submit" class="botao-centro">Cadastrar</button></td>
+            <td><button type="submit" class="botao-centro" onclick="cadastrarProdutos()">Cadastrar</button></td>
         </tr>
         
     </form>
