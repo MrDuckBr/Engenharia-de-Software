@@ -27,9 +27,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/register', (request, response) => {
-  const {nome, email, documento, password} = request.body
+  const {nome, email, documento, password, empresa} = request.body
 
-  UserSchema.create({nome, email, documento, password})
+  UserSchema.create({nome, email, documento, password, empresa})
   .then((novoUser) =>{
     response.send(novoUser)
   })
@@ -60,7 +60,8 @@ router.post('/login', (request, response) => {
   .then((user) => {
         bcrypt.compare(password, user.password)
         .then((result) => {
-            return response.send('Usuário logado')
+          
+            return response.send(user.empresa)
         })
         .catch((error) => {
             return response.send('Senha incorreta')

@@ -22,8 +22,15 @@ function login(){
     xhr.send(JSON.stringify(dados));
 
     xhr.onload = function () {
+        if(xhr.status == 200){
+            if(xhr.responseText){
+                window.location.assign('../Servicos/dashboard.html')
+            }else{
+                window.location.assign('solicitarServico.html')
+            }
+            alert("Logado com Sucesso!")
+        }
         
-        alert(xhr.responseText)
     };
     })
 }

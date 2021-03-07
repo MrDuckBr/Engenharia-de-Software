@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/cadastros.css" rel="stylesheet">
+    <script src="servico.js"></script>
 
     <title>ConstruBem - Login</title>
 </head>
@@ -16,9 +17,9 @@
     </div>
     <div class="fundo">
         <div class="barra-lateral">
-            <button class="botoes-lateral"> Funcionários</button> <br>
+            <button class="botoes-lateral" onclick="funcionario();"> Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
-            <button class="botoes-lateral">Serviços</button> <br>
+            <button class="botoes-lateral" onclick="servico();">Serviços</button> <br>
         </div>
         <div class="caixa-centro">
             <div class="campo-centro">
@@ -30,9 +31,9 @@
                     <td class="campo-field" >Nome</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="campos" value="Prego" disabled> </td>
-                    <td><input type="text" class="campos" value="Tijolo" disabled> </td>
-                    <td><input type="text" class="campos" value="Cimento" disabled> </td>
+                    <td><input type="text" class="campos" value="prego" disabled> </td>
+                    <td><input type="text" class="campos" value="tijolo" disabled> </td>
+                    <td><input type="text" class="campos" value="cimento" disabled> </td>
                     
                 </tr>
                 <tr>
@@ -45,12 +46,22 @@
                     <td> <input id="tijolo" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
                     <td> <input id="cimento" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
                 </tr>
-                <tr>
-                    <td><button type="submit" class="botao-centro" onclick="cadastrarProdutos()">Cadastrar</button></td>
+                 
+                    </table>
+                   <table>
+                   <tr>
+                    <td><input type="text" id="caixa-texto" class="caixa-texto"></td>
+                    </tr>
+                    <tr>
+                    <td><button type="submit" class="botao-centro" onclick="cadastrarServico()">Cadastrar</button></td>
                 </tr>
-                
+
             </form>
-                </table>
+
+            </table>
+                
+           
+                
                 
             </div>
         </div>

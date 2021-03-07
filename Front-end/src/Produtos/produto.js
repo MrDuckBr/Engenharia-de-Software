@@ -6,11 +6,15 @@ function cadastrarProdutos(){
 
   form.addEventListener("submit",function(event){
       event.preventDefault();
-
+      
       let dados = {
-          prego : prego.value,
-          tijolo : tijolo.value,
-          cimento : cimento.value
+        nomeProd1: "prego",
+        qtd1: parseInt(prego.value),
+        nomeProd2:"tijolo",
+        qtd2:parseInt(tijolo.value),
+        nomeProd3:"cimento",
+        qtd3: parseInt(cimento.value)
+         
       }
 
       console.log(JSON.stringify(dados))
