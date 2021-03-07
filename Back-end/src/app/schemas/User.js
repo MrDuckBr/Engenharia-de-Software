@@ -25,7 +25,8 @@ const UserSchema = new mongoose.Schema({
     },
     empresa: {
       type: Boolean,
-      default: false
+      default: false,
+      required: true
     }
 });
 
