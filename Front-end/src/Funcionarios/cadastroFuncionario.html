@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/cadastroFuncionario.css" rel="stylesheet">
+    <script src="index.js"></script>
 
     <title>ConstruBem - Cadastro Funcionario</title>
 </head>
@@ -16,23 +17,25 @@
     </div>
     <div class="fundo">
         <div class="barra-lateral">
-            <button class="botoes-lateral"> Funcionários</button> <br>
+            <button class="botoes-lateral" onclick="location.href= '../Funcionarios/dashBoardFuncionario.html'"> Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
-            <button class="botoes-lateral">Serviços</button> <br>
+            <button class="botoes-lateral" onclick="window.location.href = '../Servicos/dashBoard.html'" >Serviços</button> <br>
         </div>
         <div class="caixa-centro">
-            <form action="" method="post">
-            <div class="campo-field" >Nome</div>
-            <input type="text" class="campos" required> 
+            <form id="form" >
+            <div  class="campo-field" >Nome</div>
+            <input id="nome-campo" type="text" class="campos" required> 
             <div class="campo-field">Email</div> 
-            <input type="text"  placeholder="nome@email.com" type="text" required class="campos"> 
+            <input id="email-campo" type="text"  placeholder="nome@email.com" type="text" required class="campos"> 
             <div class="campo-field">Função</div> 
-            <input type="text" class="campos" required> 
-            <div><button type="submit" class="botao-centro">Cadastrar</button></div>
+            <input id="funcao-campo" type="text" class="campos" required> 
+            <div><button id="post-btn" type="submit" class="botao-centro" onclick="fazerPost();" >Cadastrar</button></div>
         </form>
         </div>
 
     </div>
+
+   
 
 
 </body>

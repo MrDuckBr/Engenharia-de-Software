@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="estilos/dashBoard.css" rel="stylesheet">
+    <script src="index.js"></script>
     <title>ConstruBem - Login</title>
 </head>
 <body>
@@ -15,15 +16,27 @@
     </div>
     <div class="fundo">
         <div class="barra-lateral">
-            <button id="func"  class="botoes-lateral" onclick="getNomeFunc()">Funcionários</button> <br>
-            <button class="botoes-lateral">Produtos</button> <br>
-            <button class="botoes-lateral">Serviços</button> <br>
+            <button id="func"  class="botoes-lateral" onclick="main();">Funcionários</button> <br>
+            <button class="botoes-lateral" onclick="" >Produtos</button> <br>
+            <button class="botoes-lateral" onclick="window.location.href = '../Servicos/dashBoard.html'">Serviços</button> <br>
             <button class="botoes-lateral">Usuários</button> <br>
 
-            <button class="cadastrar">Cadastrar</button>
+            <button class="cadastrar" onclick="window.location.href = 'cadastroFuncionario.html'">Cadastrar</button>
         </div>
-        <div id="caixa" class="caixa-centro">
-            
+
+<style>
+    table, tr, td{
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 18px;
+    margin-left: 40%;
+
+}
+</style>
+
+        <div id="caixa" class="caixa-centro" >
+            <table id="table"></table>
         </div>
 
     </div>
