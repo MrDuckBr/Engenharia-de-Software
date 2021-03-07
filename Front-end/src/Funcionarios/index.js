@@ -9,8 +9,8 @@ function criaLinha(usuario){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdFuncao = document.createElement("td")
-    tdNome.innerHTML = usuario['0']['nome']
-    tdFuncao.innerHTML = usuario['0']['funcao']
+    tdNome.innerHTML = usuario.nome
+    tdFuncao.innerHTML = usuario.funcao
 
     linha.appendChild(tdNome)
     linha.appendChild(tdFuncao)
@@ -23,13 +23,15 @@ function main(){
      let b =JSON.parse(a)
      
      let tabela = document.getElementById("table")
-     tabela.appendChild(criaLinha(b))
+     tabela.innerHTML = ""
+
+     b.forEach(element => {
+         let linha = criaLinha(element)
+         tabela.appendChild(linha)
+     });
+     
     
 }
-
-
-
-
 
 
 function fazerPost(){
