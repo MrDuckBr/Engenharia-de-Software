@@ -39,13 +39,14 @@
             <button class="botoes-lateral" onclick="location.href= '../Funcionarios/dashBoardFuncionario.html'" > Funcionários</button> <br>
             <button class="botoes-lateral">Produtos</button> <br>
             <button class="botoes-lateral" onclick="main(); ">Serviços</button> <br>
-            <button class="botoes-lateral">Usuários</button> <br>
+            <button class="botoes-lateral" onclick="mostraDisponiveis()">Usuários</button> <br>
 
             <button class="cadastrar" onclick="window.location.href = 'cadastros.html'">Cadastrar</button>
         </div>
         <div class="caixa-centro">
             <table id="table" class="table"></table>
-            
+            <div class="servicos">SERVICOS DISPONIVEIS</div>
+            <table id="table-disponiveis" class="table" "></table>
         </div>
 
     </div>

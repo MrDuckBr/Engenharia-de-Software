@@ -5,7 +5,7 @@ function fazGet(url){
     return  request.responseText
 }
 
-function criaLinha(usuario,valor){
+function criaLinha(usuario){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdDescricao = document.createElement("td")
@@ -13,19 +13,19 @@ function criaLinha(usuario,valor){
     botao.setAttribute('type','button')
     botao.appendChild(document.createTextNode('Atualizar'));
     botao.onclick = function(){
-        console.log(valor)
-         atualizar(valor)
+        console.log(usuario)
+         atualizar(usuario._id)
      }
     
     button = document.createElement("button")
     button.setAttribute('type','button')
     button.appendChild(document.createTextNode('Deletar'));
     button.onclick = function(){
-       console.log(valor)
-        deletar(valor)
+        console.log(usuario._id)
+        deletar(usuario._id)
     }
-    tdNome.innerHTML = usuario.nome
-    tdDescricao.innerHTML = usuario.descricaoServico
+    tdNome.innerHTML = usuario.nomeUser
+    tdDescricao.innerHTML = usuario.nomeFunc
 
     linha.appendChild(tdNome)
     linha.appendChild(tdDescricao)
@@ -35,18 +35,32 @@ function criaLinha(usuario,valor){
     return linha
 }
 
+
+function criaLegenda(nome1, nome2){
+    linha = document.createElement("tr")
+    tdNome = document.createElement("td")
+    tdDescricao = document.createElement("td")
+    tdNome.innerHTML = nome1
+    tdDescricao.innerHTML = nome2
+    linha.appendChild(tdNome)
+    linha.appendChild(tdDescricao)
+    return linha
+}
+
 function main(){
-    const a = fazGet("http://localhost:3000/servico/listar")
+    const a = fazGet("http://localhost:3000/servico/cadastrados")
      let b =JSON.parse(a)
      
      
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
+     let legenda = criaLegenda("Usuário" , "Funcionario")
+     tabela.appendChild(legenda)
      b.forEach(element => {
 
         console.log(element)
-         let valor = element['0']['_id']
-         let linha = criaLinha(element, valor)
+         
+         let linha = criaLinha(element)
          
          tabela.appendChild(linha)
          
@@ -56,7 +70,47 @@ function main(){
 }
 
 
+function table2(usuario){
+    linha = document.createElement("tr")
+    tdNome = document.createElement("td")
+    tdDescricao = document.createElement("td")
+    tdNome.innerHTML = usuario.nome
+    tdDescricao.innerHTML = usuario.descricaoServico
+    botao = document.createElement("button")
+    botao.setAttribute('type','button')
+    botao.appendChild(document.createTextNode('Cadastrar'));
+    botao.onclick = function(){
+        console.log(usuario)
+        window.location.replace('cadastros.html')
+     }
 
+    linha.appendChild(tdNome)
+    linha.appendChild(tdDescricao)
+    linha.appendChild(botao)
+    return linha
+
+}
+
+function mostraDisponiveis(){
+    const a = fazGet("http://localhost:3000/servico/disponiveis")
+     let b =JSON.parse(a)
+     
+     
+     let tabela = document.getElementById("table-disponiveis")
+     tabela.innerHTML = ""
+     let legenda = criaLegenda("Usuário" , "Descricao")
+     tabela.appendChild(legenda)
+     b.forEach(element => {
+
+        console.log(element)
+         
+         let linha = table2(element)
+         
+         tabela.appendChild(linha)
+         
+     });
+
+}
 
 
 function cadastrarServico(){
@@ -69,10 +123,7 @@ function cadastrarServico(){
     form.addEventListener("submit",function(event){
         event.preventDefault();
 
-        
-        
-        
-
+       
         let dados = {
             descricao: texto.value,
             produto1Qnt: prego.value,
@@ -93,7 +144,9 @@ function cadastrarServico(){
   
     xhr.onload = function () {
         
-        alert(xhr.responseText)
+        alert("Servico Cadastrado")
+        window.location.replace('dashBoard.html')
+
     };
     })
   }
@@ -112,7 +165,7 @@ function funcionario(){
 
 function deletar(usuario){
     var xhr = new XMLHttpRequest();
-    xhr.open('DELETE', "http://localhost:3000/funcionario/"+ usuario);
+    xhr.open('DELETE', "http://localhost:3000/servico/"+ usuario);
     xhr.setRequestHeader('Content-type', 'application/json')
    
    xhr.send()
@@ -123,4 +176,50 @@ function deletar(usuario){
         
     };
  
+}
+
+
+
+function atualizar(valor){
+    console.log(valor + "arroz comi to com fome")
+    window.location.assign('atualizar.html?'+valor)
+    
+
+}
+
+function fazAtualiza(){
+    
+    let prego = document.querySelector("#prego")
+    let tijolo = document.querySelector("#tijolo")
+    let cimento = document.querySelector("#cimento")
+    let form = document.querySelector("#form")
+    let texto = document.querySelector("#caixa-texto")
+
+   form.addEventListener("submit",function(event){
+       event.preventDefault();
+
+       let dados = {
+        descricao: texto.value,
+        produto1Qnt: prego.value,
+        produto2Qnt: tijolo.value,
+        produto3Qnt: cimento.value
+    }
+
+       console.log(JSON.stringify(dados))
+       
+        var xhr = new XMLHttpRequest();
+        xhr.open('PUT', "http://localhost:3000/servico/"+window.location.search.substr(1).split('&'));
+        xhr.setRequestHeader('Content-type', 'application/json')
+       
+        
+
+        xhr.send(JSON.stringify(dados));
+
+        xhr.onload = function () {
+            
+            alert('Servico Atualizado')
+            window.location.assign('dashBoard.html')
+            main()
+        };
+     })
 }
