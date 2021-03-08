@@ -111,7 +111,7 @@ button:hover{
     border-radius: 20px;
     width: 20%;
     height: 35px;
-    margin-top: 47%;
+    margin-top: 5%;
     margin-left: 40%;
     background: white;
     outline: none;
@@ -144,4 +144,17 @@ button:hover{
     background: white;
     border-radius: 25px;
     outline: none;
+}
+
+
+.caixa-texto{
+    border-radius: 25px;
+    height: 100px;
+    margin-top: 8%;
+    width: 900px;
+    left: 20%;
+    outline: none;
+    font-size: 20px;
+
+
 }
