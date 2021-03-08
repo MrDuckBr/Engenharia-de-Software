@@ -150,3 +150,7 @@ function atualizar(valor){
 }
 
 
+
+function logout(){
+    window.location.assign('../Index/index.html')
+}

@@ -141,9 +141,9 @@ function cadastrarServico(){
     
   
     xhr.send(JSON.stringify(dados));
-  
+    
     xhr.onload = function () {
-        
+        console.log(xhr.status)
         alert("Servico Cadastrado")
         window.location.replace('dashBoard.html')
 
@@ -222,4 +222,9 @@ function fazAtualiza(){
             main()
         };
      })
+}
+
+
+function logout(){
+    window.location.assign('../Index/index.html')
 }
