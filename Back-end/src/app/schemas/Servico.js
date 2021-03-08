@@ -3,25 +3,25 @@ import mongoose from '@/database';
 const ServicoSchema = new mongoose.Schema({
   descricao: {
     type: String,
-    required: true,
   },
   produto1: {
     type: String,
-    required: true,
   },
   produto2: {
     type: String,
-    required: true,
   },
   produto3: {
     type: String,
-    required: true,
   },
-  user:{
+  idUser: {
     type: String,
     required: true
   },
-  func: {
+  nomeFunc: {
+    type: String,
+    required: true
+  },
+  nomeUser: {
     type: String,
     required: true
   }

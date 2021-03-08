@@ -6,7 +6,7 @@ import Produto from '@/app/schemas/Produto';
 
 const router = new Router();
 
-router.get('/listar', (request, response) => {
+router.get('/disponiveis', (request, response) => {
 
   const {descricaoServico} = request.query
 
@@ -21,77 +21,117 @@ router.get('/listar', (request, response) => {
   })
 })
 
+router.get('/cadastrados', (req, res) => {
+  ServicoSchema.find()
+  .then((servico)=> {
+    console.log(servico)
+    res.send(servico)
+  })
+  .catch((error)=>{
+    res.send({error: 'ID não encontrado'})
+  })
+});
+
 
 router.post('/cadastrar', (request, response) => {
-  const {descricaoServico} = request.query
-  const {produto1Qnt, produto2Qnt, produto3Qnt} = request.body
-  const {nomeProd1, qtd1, nomeProd2, qtd2, nomeProd3, qtd3} = request.query
+  const {descricaoServico, produto1Qnt, produto2Qnt, produto3Qnt} = request.body
+  const {nomeProd1, nomeProd2, nomeProd3} = request.query
   const {avaiable} = request.query
   let func = ""
   let produt1 = ""
   let produt2 = ""
   let produt3 = ""
 
-  Funcionario.findOne({ avaiable: { $ne: false }})
-  .select(avaiable)
-  .then((funcionario) => {
-    func = funcionario.nome
-
-    Produto.findOne()
-    .select(nomeProd1)
-    .then((prod) => {
-      if(prod.qtd1 >= produto1Qnt){
-        produt1 = prod.nomeProd1
-        
+  User.findOne({descricaoServico})
+  .then((user) => {
+    if(descricaoServico == user.descricaoServico){
+      
+      Funcionario.findOne({ avaiable: { $ne: false }})
+      .select(avaiable)
+      .then((funcionario) => {
+    
         Produto.findOne()
-        .select(nomeProd2)
+        .select(nomeProd1)
         .then((prod) => {
-          if(prod.qtd2 >= produto2Qnt){
-            produt2 = prod.nomeProd2
-           
+          if(prod.qtd1 >= produto1Qnt){
+            produt1 = prod.nomeProd1
+            
             Produto.findOne()
-            .select(nomeProd3)
+            .select(nomeProd2)
             .then((prod) => {
-              if(prod.qtd3 >= produto3Qnt){
-                produt3 = prod.nomeProd3
+              if(prod.qtd2 >= produto2Qnt){
+                produt2 = prod.nomeProd2
+               
+                Produto.findOne()
+                .select(nomeProd3)
+                .then((prod) => {
+                  if(prod.qtd3 >= produto3Qnt){
+                    produt3 = prod.nomeProd3
 
-                Funcionario.findByIdAndUpdate(funcionario._id, {avaiable: false}, {new: true})
-                .then((indisponivel) => {
-                  console.log('Funcionario está com servico')
-                })
-                .catch((error) => {
-                  console.log("Func erro" + " " + error)
-                })
-                        
-                Produto.findByIdAndUpdate(prod._id, {$inc: {qtd1: -produto1Qnt, qtd2: -produto2Qnt, qtd3: -produto3Qnt} }, {new: true})
-                .then((teste) => {
-                  console.log('teste')
-                })
-                .catch((error) => {
-                  console.log(error)
-                })
+                    let nomeFunc = funcionario.nome
+                    let nomeUser = user.nome
+                    let idUser = user.id
+                    console.log(func)
+                    ServicoSchema.create({idUser, nomeFunc, nomeUser})
+                    .then((criou) => {
 
-                return response.send({message: `${produt1} ${produto1Qnt} / ${produt2} ${produto2Qnt} / ${produt3} ${produto3Qnt} Funcionario: ${func}`})
+                      Funcionario.findByIdAndUpdate(funcionario._id, {avaiable: false}, {new: true})
+                      .then((indisponivel) => {
+                        console.log('Funcionario está com servico')
+                      })
+                      .catch((error) => {
+                        console.log("Func erro" + " " + error)
+                      })
+                              
+                      Produto.findByIdAndUpdate(prod._id, {$inc: {qtd1: -produto1Qnt, qtd2: -produto2Qnt, qtd3: -produto3Qnt} }, {new: true})
+                      .then((teste) => {
+                        console.log('teste')
+                      })
+                      .catch((error) => {
+                        console.log(error)
+                      })
+                      
+  
+                      User.findByIdAndUpdate( user.id, {descricaoServico: null, solicitado: false }, {new:true} )
+                      .then((servico) => {
+                          console.log("Mudou descricaoServico para null")
+                      })
+                      .catch((error) => {
+                        console.log(error)
+                        console.log( 'Erro ao setar null no descricaoServico')
+                      })
+                      return response.send(criou)
+                    })
+                    .catch((error) => {
+                      console.log(error)
+                      return response.send('Não foi possivel criar servico')
+                    })                   
+                  }
+                  else 
+                  return response.send({message: `${prod.nomeProd3} insuficiente`})
+                })            
               }
-              else 
-              return response.send({message: `${prod.nomeProd3} insuficiente`})
-            })            
+              else
+                return response.send({message: `${prod.nomeProd2} insuficiente`})
+            })
           }
-          else
-            return response.send({message: `${prod.nomeProd2} insuficiente`})
+          else 
+            return response.send({message: `${prod.nomeProd1} insuficiente`})
         })
-      }
-      else 
-        return response.send({message: `${prod.nomeProd1} insuficiente`})
-    })
-    .catch((error) => {
-      console.log(error)
-      return response.send({message:'Impossível cadastrar serviço'})
-    })
+        .catch((error) => {
+          console.log(error)
+          return response.send({message:'Impossível cadastrar serviço'})
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        response.send({message: 'Não há funcionários disponíveis'})
+      })
+    }
   })
   .catch((error) => {
     console.log(error)
-    response.send({message: 'Não há funcionários disponíveis'})
+    return response.send("Não foi possivel achar servico")
   })
 })
 
