@@ -60,10 +60,7 @@ router.post('/login', (request, response) => {
   .then((user) => {
         bcrypt.compare(password, user.password)
         .then((result) => {
-
-          
-            return response.send(user.empresa)
-
+            return response.send({message:'Usuário Logado'})
         })
         .catch((error) => {
             return response.send('Senha incorreta')

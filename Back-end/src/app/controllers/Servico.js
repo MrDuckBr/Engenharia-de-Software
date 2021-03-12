@@ -102,36 +102,36 @@ router.post('/cadastrar', (request, response) => {
                     })
                     .catch((error) => {
                       console.log(error)
-                      return response.send({message:'Não foi possivel criar servico'})
+                      return response.send('Não foi possivel criar servico')
                     })                   
                   }
                   else 
-                  return response.send({message: `${prod.nomeProd3} insuficiente`})
+                  return response.send(`${prod.nomeProd3} insuficiente`)
                 })            
               }
               else
-                return response.send({message: `${prod.nomeProd2} insuficiente`})
+                return response.send(`${prod.nomeProd2} insuficiente`)
             })
           }
           else 
-            return response.send({message: `${prod.nomeProd1} insuficiente`})
+            return response.send(`${prod.nomeProd1} insuficiente`)
         })
         .catch((error) => {
           console.log(error)
-          return response.send({message:'Impossível cadastrar serviço'})
+          return response.send('Impossível cadastrar serviço')
         })
       })
       .catch((error) => {
         console.log(error)
-        response.send({message: 'Não há funcionários disponíveis'})
+        response.send('Não há funcionários disponíveis')
       })
     }
     else
-      return response.send({message:'Servico não encontrado'})
+      return response.send('Servico não encontrado')
   })
   .catch((error) => {
     console.log(error)
-    return response.send({message:"Não foi possivel achar servico"})
+    return response.send('Não foi possivel achar servico')
   })
 })
 
