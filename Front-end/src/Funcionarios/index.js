@@ -11,6 +11,7 @@ function criaLinha(usuario,valor){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdFuncao = document.createElement("td")
+    tdAvaiable = document.createElement("td")
     botao = document.createElement("button")
     botao.setAttribute('type','button')
     botao.appendChild(document.createTextNode('Atualizar'));
@@ -28,9 +29,20 @@ function criaLinha(usuario,valor){
     }
     tdNome.innerHTML = usuario.nome
     tdFuncao.innerHTML = usuario.funcao
+    console.log(usuario.avaiable)
+    if(usuario.avaiable){
+        tdAvaiable.innerHTML = 'Disponivel'
+        
+    }
+    if(!usuario.avaiable){
+        tdAvaiable.innerHTML = 'Indisponivel'
+    }
+    
+    
 
     linha.appendChild(tdNome)
     linha.appendChild(tdFuncao)
+    linha.appendChild(tdAvaiable)
     linha.appendChild(botao)
     linha.appendChild(button)
 
@@ -44,6 +56,8 @@ function main(){
      
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
+     let legenda = criaLegenda("FUNCIONÁRIO" , "FUNÇÃO","DISPONIBILIDADE")
+     tabela.appendChild(legenda)
      b.forEach(element => {
          let valor = element._id
          let linha = criaLinha(element, valor)
@@ -53,6 +67,22 @@ function main(){
      });
      
     
+}
+
+
+function criaLegenda(nome1, nome2, nome3){
+    linha = document.createElement("tr")
+    tdNome = document.createElement("td")
+    tdDescricao = document.createElement("td")
+    tdDisponivel = document.createElement("td")
+    tdNome.innerHTML = nome1
+    tdDescricao.innerHTML = nome2
+    tdDisponivel.innerHTML = nome3
+    linha.appendChild(tdNome)
+    linha.appendChild(tdDescricao)    
+    linha.appendChild(tdDisponivel)    
+
+    return linha
 }
 
 
