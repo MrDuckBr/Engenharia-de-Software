@@ -9,6 +9,9 @@ const FuncionarioSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  funcionario: {
+    type: String,
+  },
   avaiable: {
     type: Boolean,
     default: true

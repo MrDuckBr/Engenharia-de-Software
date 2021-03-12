@@ -37,7 +37,6 @@ router.post('/cadastrar', (request, response) => {
   const {descricaoServico, produto1Qnt, produto2Qnt, produto3Qnt} = request.body
   const {nomeProd1, nomeProd2, nomeProd3} = request.query
   const {avaiable} = request.query
-  let func = ""
   let produt1 = ""
   let produt2 = ""
   let produt3 = ""
@@ -45,11 +44,11 @@ router.post('/cadastrar', (request, response) => {
   User.findOne({descricaoServico})
   .then((user) => {
     if(descricaoServico == user.descricaoServico){
-      
+
       Funcionario.findOne({ avaiable: { $ne: false }})
       .select(avaiable)
       .then((funcionario) => {
-    
+        console.log(funcionario.nome)
         Produto.findOne()
         .select(nomeProd1)
         .then((prod) => {
@@ -71,7 +70,6 @@ router.post('/cadastrar', (request, response) => {
                     let nomeFunc = funcionario.nome
                     let nomeUser = user.nome
                     let idUser = user.id
-                    console.log(func)
                     ServicoSchema.create({idUser, nomeFunc, nomeUser})
                     .then((criou) => {
 
@@ -104,7 +102,7 @@ router.post('/cadastrar', (request, response) => {
                     })
                     .catch((error) => {
                       console.log(error)
-                      return response.send('Não foi possivel criar servico')
+                      return response.send({message:'Não foi possivel criar servico'})
                     })                   
                   }
                   else 
@@ -128,10 +126,12 @@ router.post('/cadastrar', (request, response) => {
         response.send({message: 'Não há funcionários disponíveis'})
       })
     }
+    else
+      return response.send({message:'Servico não encontrado'})
   })
   .catch((error) => {
     console.log(error)
-    return response.send("Não foi possivel achar servico")
+    return response.send({message:"Não foi possivel achar servico"})
   })
 })
 

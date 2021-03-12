@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (request, response) => {
-  const {nome, funcao} = request.body
+  const {nome, email,funcao} = request.body
 
-  FuncionarioSchema.create({nome, funcao})
+  FuncionarioSchema.create({nome, email, funcao})
   .then((novoFuncionario) =>{
     response.send(novoFuncionario)
   })
