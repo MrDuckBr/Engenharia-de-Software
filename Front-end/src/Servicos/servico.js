@@ -143,7 +143,15 @@ function cadastrarServico(){
     xhr.send(JSON.stringify(dados));
     
     xhr.onload = function () {
-        
+        if(xhr.status == 200){
+            alert(xhr.responseText)
+            window.location.assign('dashBoardFuncionario.html')
+            main()
+        }else if(xhr.status == 400){
+            alert(xhr.responseText)
+        }
+
+
         alert(xhr.responseText)
         window.location.replace('dashBoard.html')
 
