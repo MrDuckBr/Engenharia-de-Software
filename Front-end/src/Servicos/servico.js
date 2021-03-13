@@ -143,8 +143,8 @@ function cadastrarServico(){
     xhr.send(JSON.stringify(dados));
     
     xhr.onload = function () {
-        console.log(xhr.status)
-        alert("Servico Cadastrado")
+        
+        alert(xhr.responseText)
         window.location.replace('dashBoard.html')
 
     };
@@ -171,7 +171,7 @@ function deletar(usuario){
    xhr.send()
     xhr.onload = function () {
         
-        alert('Funcionario Deletado')
+        alert(xhr.responseText)
         main()
         
     };
@@ -199,7 +199,7 @@ function fazAtualiza(){
        event.preventDefault();
 
        let dados = {
-        descricao: texto.value,
+        descricaoServico: texto.value,
         produto1Qnt: prego.value,
         produto2Qnt: tijolo.value,
         produto3Qnt: cimento.value
@@ -217,7 +217,7 @@ function fazAtualiza(){
 
         xhr.onload = function () {
             
-            alert('Servico Atualizado')
+            alert(xhr.responseText)
             window.location.assign('dashBoard.html')
             main()
         };
