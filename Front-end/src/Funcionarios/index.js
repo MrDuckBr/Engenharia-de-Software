@@ -1,4 +1,5 @@
 var idFunc = ""
+
  
  function fazGet(url){
     let request = new XMLHttpRequest()
@@ -110,9 +111,12 @@ function fazerPost(){
         xhr.send(JSON.stringify(dados));
 
         xhr.onload = function () {
-            
-            alert('Funcionario Cadastrado')
-            window.location.assign('dashBoardFuncionario.html')
+            if(xhr.status == 201){
+                alert(xhr.responseText)
+                window.location.assign('dashBoardFuncionario.html')
+            }else if(xhr.status == 400){
+                alert(xhr.responseText)
+            }
         };
      })
 
@@ -130,9 +134,15 @@ function deletar(usuario){
    
    xhr.send()
     xhr.onload = function () {
+        if(xhr.status == 200){
+            alert(xhr.responseText)
+            window.location.assign('dashBoardFuncionario.html')
+            main()
+        }else if(xhr.status == 400){
+            alert(xhr.responseText)
+        }
+       
         
-        alert('Funcionario Deletado')
-        main()
         
     };
  
@@ -164,10 +174,13 @@ function fazAtualiza(idFunc){
         xhr.send(JSON.stringify(dados));
 
         xhr.onload = function () {
-            
-            alert('Funcionario Atualizado')
-            window.location.assign('dashBoardFuncionario.html')
-            main()
+            if(xhr.status == 200){
+                alert(xhr.responseText)
+                window.location.assign('dashBoardFuncionario.html')
+                main()
+            }else if(xhr.status == 400){
+                alert(xhr.responseText)
+            }
         };
      })
 }
@@ -184,3 +197,4 @@ function atualizar(valor){
 function logout(){
     window.location.assign('../Index/index.html')
 }
+

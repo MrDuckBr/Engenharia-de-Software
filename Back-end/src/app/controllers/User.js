@@ -60,14 +60,14 @@ router.post('/login', (request, response) => {
   .then((user) => {
         bcrypt.compare(password, user.password)
         .then((result) => {
-            return response.send({message:'Usuário Logado'})
+            return response.status(200).send('Usuário Logado')
         })
         .catch((error) => {
-            return response.send('Senha incorreta')
+            return response.status(400).send('Senha incorreta')
         })
   })
   .catch((error) => {
-      return response.send('Usuário inexistente')
+      return response.status(400).send('Usuário inexistente')
   })
 })
 

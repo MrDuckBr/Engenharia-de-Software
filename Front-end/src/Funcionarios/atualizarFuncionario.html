@@ -26,7 +26,7 @@
             <div  class="campo-field" >Nome</div>
             <input id="nome-campo" type="text" class="campos" required> 
             <div class="campo-field">Email</div> 
-            <input id="email-campo" type="text"  placeholder="nome@email.com" type="text" required class="campos"> 
+            <input id="email-campo" type="text"  placeholder="nome@email.com" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required class="campos"> 
             <div class="campo-field">Função</div> 
             <input id="funcao-campo" type="text" class="campos" required> 
             <div><button id="post-btn" type="submit" class="botao-centro" onclick="fazAtualiza();" >Atualizar</button></div>

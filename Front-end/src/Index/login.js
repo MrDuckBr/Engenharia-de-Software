@@ -23,12 +23,13 @@ function login(){
 
     xhr.onload = function () {
         if(xhr.status == 200){
-            if(xhr.responseText){
-                window.location.assign('../Servicos/dashboard.html')
-            }else{
-                window.location.assign('solicitarServico.html')
-            }
-            alert("Logado com Sucesso!")
+            alert("Logado com Sucesso!")    
+            window.location.assign('../Servicos/dashboard.html')
+        }else{
+            alert("Erro ao realizar o login: " + xhr.responseText)
+           
+            
+            
         }
         
     };

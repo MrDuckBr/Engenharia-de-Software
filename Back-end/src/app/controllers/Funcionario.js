@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     res.send(funcionario)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send({error: 'ID não encontrado'})
   })
 });
 
@@ -18,11 +18,11 @@ router.post('/', (request, response) => {
 
   FuncionarioSchema.create({nome, email, funcao})
   .then((novoFuncionario) =>{
-    response.send(novoFuncionario)
+    response.status(201).send(`Funcionario ${novoFuncionario.nome} cadastrado`)
   })
   .catch((error) => {
     console.log(error)
-    response.send({message: "Erro ao cadastrar funcionário"})
+    response.status(400).send('Erro ao cadastrar funcionário')
   })
 })
 
@@ -30,10 +30,10 @@ router.delete('/:id',(req,res)=>{
   const id = req.params.id
   FuncionarioSchema.findByIdAndRemove(id)
   .then((funcionario)=>{
-    res.send(funcionario)
+    res.status(200).send(`Funcionario ${funcionario.nome} deletado`)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send('Erro ao derrotar o Funcionário')
   })
 })
 
@@ -43,10 +43,10 @@ router.put('/:id',(req,res)=>{
   const {nome, funcao} = req.body
   FuncionarioSchema.findByIdAndUpdate(id, {nome, funcao},{new:true})
   .then((funcionario)=>{
-    res.send(funcionario)
+    res.status(200).send(`Funcionario ${funcionario.nome} atualizado`)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send('Erro ao atualizar o funcionario')
   })
 })
 

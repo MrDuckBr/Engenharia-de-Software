@@ -13,11 +13,11 @@ router.get('/disponiveis', (request, response) => {
   User.find({ descricaoServico: { $ne: null } })
   .select(descricaoServico)
   .then((servico) => {
-      return response.send(servico)
+      return response.status(200).send(servico)
   })
   .catch((error) => {
     console.log(error)
-    return response.send({message: 'Erro'})
+    return response.status(400).send({message: 'Erro'})
   })
 })
 
@@ -25,10 +25,10 @@ router.get('/cadastrados', (req, res) => {
   ServicoSchema.find()
   .then((servico)=> {
     console.log(servico)
-    res.send(servico)
+    res.status(200).send(servico)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send({error: 'ID não encontrado'})
   })
 });
 
@@ -98,40 +98,40 @@ router.post('/cadastrar', (request, response) => {
                         console.log(error)
                         console.log( 'Erro ao setar null no descricaoServico')
                       })
-                      return response.send(criou)
+                      return response.status(201).send(criou)
                     })
                     .catch((error) => {
                       console.log(error)
-                      return response.send('Não foi possivel criar servico')
+                      return response.status(400).send('Não foi possivel criar servico')
                     })                   
                   }
                   else 
-                  return response.send(`${prod.nomeProd3} insuficiente`)
+                  return response.status(400).send(`${prod.nomeProd3} insuficiente`)
                 })            
               }
               else
-                return response.send(`${prod.nomeProd2} insuficiente`)
+                return response.status(400).send(`${prod.nomeProd2} insuficiente`)
             })
           }
           else 
-            return response.send(`${prod.nomeProd1} insuficiente`)
+            return response.status(400).send(`${prod.nomeProd1} insuficiente`)
         })
         .catch((error) => {
           console.log(error)
-          return response.send('Impossível cadastrar serviço')
+          return response.status(400).send('Impossível cadastrar serviço')
         })
       })
       .catch((error) => {
         console.log(error)
-        response.send('Não há funcionários disponíveis')
+        response.status(400).send('Não há funcionários disponíveis')
       })
     }
     else
-      return response.send('Servico não encontrado')
+      return response.status(400).send('Servico não encontrado')
   })
   .catch((error) => {
     console.log(error)
-    return response.send('Não foi possivel achar servico')
+    return response.status(400).send('Não foi possivel achar servico')
   })
 })
 
@@ -140,10 +140,10 @@ router.delete('/:id',(req,res)=>{
   const {descricaoServico} = req.query
   ServicoSchema.findByIdAndDelete(id)
   .then((Servico)=>{
-    res.send(Servico)
+    res.status(200).send(Servico)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send({error: 'ID não encontrado'})
   })
 })
 
@@ -153,10 +153,10 @@ router.put('/:id',(req,res)=>{
   const {nome,email,funcao} = req.body
   ServicoSchema.findByIdAndUpdate(id, {nome, email, funcao},{new:true})
   .then((Servico)=>{
-    res.send(Servico)
+    res.status(200).send(Servico)
   })
   .catch((error)=>{
-    res.send({error: 'ID não encontrado'})
+    res.status(400).send({error: 'ID não encontrado'})
   })
 })
 
