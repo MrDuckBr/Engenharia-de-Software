@@ -145,15 +145,10 @@ function cadastrarServico(){
     xhr.onload = function () {
         if(xhr.status == 200){
             alert(xhr.responseText)
-            window.location.assign('dashBoardFuncionario.html')
-            main()
+            window.location.assign('dashBoard.html')
         }else if(xhr.status == 400){
             alert(xhr.responseText)
         }
-
-
-        alert(xhr.responseText)
-        window.location.replace('dashBoard.html')
 
     };
     })
@@ -179,8 +174,12 @@ function deletar(usuario){
    xhr.send()
     xhr.onload = function () {
         
-        alert(xhr.responseText)
-        main()
+        if(xhr.status == 200){
+            alert(xhr.responseText)
+           main()
+        }else if(xhr.status == 400){
+            alert(xhr.responseText)
+        }
         
     };
  
@@ -225,9 +224,13 @@ function fazAtualiza(){
 
         xhr.onload = function () {
             
-            alert(xhr.responseText)
-            window.location.assign('dashBoard.html')
-            main()
+            if(xhr.status == 200){
+                alert(xhr.responseText)
+                window.location.assign('dashBoard.html')
+                main()
+            }else if(xhr.status == 400){
+                alert(xhr.responseText)
+            }
         };
      })
 }
