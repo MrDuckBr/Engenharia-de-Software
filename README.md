@@ -38,18 +38,86 @@ Banco de dados: PostgreSQL
 ```sh
 .
 ├── Back-end
-│   ├── nodemon.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── src
+│       ├── app
+│       │   ├── controllers
+│       │   │   ├── Funcionario.js
+│       │   │   ├── Funcionario.test.js
+│       │   │   ├── index.js
+│       │   │   ├── Produto.js
+│       │   │   ├── Servico.js
+│       │   │   ├── Servico.test.js
+│       │   │   └── User.js
+│       │   └── schemas
+│       │       ├── Funcionario.js
+│       │       ├── Produto.js
+│       │       ├── Servico.js
+│       │       └── User.js
+│       ├── database
+│       │   └── index.js
+│       ├── index.js
+│       ├── jest.config.js
+│       └── server.js
+├── Diagrama
+│   ├── Diagrama_de_classe.pdf
+│   ├── Diagrama_de_Implantação.png
+│   └── Diagrama_de_sequencia.pdf
+├── Front-end
 │   ├── package.json
 │   ├── package-lock.json
 │   └── src
-│       └── index.js
-├── Diagrama
-│   └── Diagrama_de_classe.pdf
+│       ├── Funcionarios
+│       │   ├── atualizarFuncionario.html
+│       │   ├── cadastroFuncionario.html
+│       │   ├── dashBoardFuncionario.html
+│       │   ├── estilos
+│       │   │   ├── cadastroFuncionario.css
+│       │   │   └── dashBoard.css
+│       │   └── index.js
+│       ├── Index
+│       │   ├── cadastrarEmpresa.html
+│       │   ├── cadastrarUsuario.html
+│       │   ├── cadastro.js
+│       │   ├── estilos
+│       │   │   ├── cadastrarEmpresa.css
+│       │   │   ├── cadastrarUsuario.css
+│       │   │   ├── index.css
+│       │   │   └── login.css
+│       │   ├── index.html
+│       │   ├── index.js
+│       │   ├── login.html
+│       │   ├── login.js
+│       │   └── solicitarServico.html
+│       ├── Produtos
+│       │   ├── cadastroProduto.html
+│       │   ├── estilos
+│       │   │   └── cadastroProduto.css
+│       │   └── produto.js
+│       └── Servicos
+│           ├── atualizar.html
+│           ├── cadastros.html
+│           ├── dashBoard.html
+│           ├── estilos
+│           │   ├── cadastros.css
+│           │   └── dashBoard.css
+│           └── servico.js
 ├── Padrões Adotados
 │   └── Regra de Verificação  e Analise de Requisitos.pdf
 ├── README.md
-└── Requisitos
-    ├── Documento_Requisitos_ConstruBem.docx
-    └── Documento_Requisitos_ConstruBem.pdf
-
+├── Requisitos
+│   ├── Documento_Requisitos_ConstruBem.docx
+│   └── Documento_Requisitos_ConstruBem.pdf
+└── Testes
+    ├── AtualizarFuncionarioTest.java
+    ├── AtualizarServicoTest.java
+    ├── CadastrarFuncionarioTest.java
+    ├── CadastrarServicoTest.java
+    ├── DeletarFuncionarioTest.java
+    ├── DeletarServicoTest.java
+    ├── ListarFuncionarioTest.java
+    ├── ListarServicoTest.java
+    └── Testes_FrontEnd.side
 ```
