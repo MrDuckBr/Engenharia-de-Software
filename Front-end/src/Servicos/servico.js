@@ -25,7 +25,7 @@ function criaLinha(usuario){
         deletar(usuario._id)
     }
     tdNome.innerHTML = usuario.nomeUser
-    tdDescricao.innerHTML = usuario.nomeFunc
+    tdDescricao.innerHTML = usuario.descricao
 
     linha.appendChild(tdNome)
     linha.appendChild(tdDescricao)
@@ -49,12 +49,13 @@ function criaLegenda(nome1, nome2){
 
 function main(){
     const a = fazGet("http://localhost:3000/servico/cadastrados")
+    console.log(a)
      let b =JSON.parse(a)
      
      
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
-     let legenda = criaLegenda("Usuário" , "Funcionario")
+     let legenda = criaLegenda("Usuário" , "Descricao")
      tabela.appendChild(legenda)
      b.forEach(element => {
 
@@ -125,7 +126,7 @@ function cadastrarServico(){
 
        
         let dados = {
-            descricao: texto.value,
+            descricaoServico: texto.value,
             produto1Qnt: prego.value,
             produto2Qnt: tijolo.value,
             produto3Qnt: cimento.value
@@ -138,14 +139,13 @@ function cadastrarServico(){
     xhr.open('POST', "http://localhost:3000/servico/cadastrar/");
     xhr.setRequestHeader('Content-type', 'application/json')
     
-    
-  
     xhr.send(JSON.stringify(dados));
     
     xhr.onload = function () {
-        if(xhr.status == 200){
+        console.log(xhr.status)
+        if(xhr.status == 201){
             alert(xhr.responseText)
-            window.location.assign('dashBoard.html')
+            //window.location.assign('dashBoard.html')
         }else if(xhr.status == 400){
             alert(xhr.responseText)
         }
@@ -188,10 +188,7 @@ function deletar(usuario){
 
 
 function atualizar(valor){
-    console.log(valor + "arroz comi to com fome")
     window.location.assign('atualizar.html?'+valor)
-    
-
 }
 
 function fazAtualiza(){
@@ -213,7 +210,7 @@ function fazAtualiza(){
     }
 
        console.log(JSON.stringify(dados))
-       
+       console.log(window.location.search.substr(1).split('&'))
         var xhr = new XMLHttpRequest();
         xhr.open('PUT', "http://localhost:3000/servico/"+window.location.search.substr(1).split('&'));
         xhr.setRequestHeader('Content-type', 'application/json')
