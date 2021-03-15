@@ -14,12 +14,12 @@ describe('Teste das rotas de servicos', () => {
     })
     it('deletar', async () => {
         const res = await request(app)
-        .del('/servico/604bcbe2478f0a8e5d0104ba')
+        .del('/servico/604fad03db320cb1c4a4af71')
         expect(res.statusCode).toEqual(200)
     })
     it('atualizar', async () => {
         const res = await request(app)
-        .put('/servico/604bcbe2478f0a8e5d0104ba')
+        .put('/servico/604fad03db320cb1c4a4af71')
         .send({
             nome: 'teste',
             email: 'teste@teste.com',

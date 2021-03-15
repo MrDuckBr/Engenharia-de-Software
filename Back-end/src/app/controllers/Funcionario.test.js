@@ -19,7 +19,7 @@ describe('Teste das rotas de funcionários', () => {
     })
     it('atualizar', async () => {
         const res = await request(app)
-        .put('/funcionario/604d3104a88d439327f8205f')
+        .put('/funcionario/604fadbedb320cb1c4a4af76')
         .send({
             nome: 'testeNovo',
             funcao: 'testeNovo'
@@ -28,7 +28,7 @@ describe('Teste das rotas de funcionários', () => {
     })
     it('deletar', async () => {
         const res = await request(app)
-        .del('/funcionario/604d2eab388e768a2fb94766')
+        .del('/funcionario/604fadbedb320cb1c4a4af76')
         expect(res.statusCode).toEqual(200)
     })
 })

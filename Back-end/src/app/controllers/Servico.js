@@ -70,7 +70,8 @@ router.post('/cadastrar', (request, response) => {
                     let nomeFunc = funcionario.nome
                     let nomeUser = user.nome
                     let idUser = user.id
-                    ServicoSchema.create({idUser, nomeFunc, nomeUser})
+                    let descricao = user.descricaoServico
+                    ServicoSchema.create({idUser, nomeFunc, nomeUser, descricao})
                     .then((criou) => {
 
                       Funcionario.findByIdAndUpdate(funcionario._id, {avaiable: false}, {new: true})
@@ -83,7 +84,7 @@ router.post('/cadastrar', (request, response) => {
                               
                       Produto.findByIdAndUpdate(prod._id, {$inc: {qtd1: -produto1Qnt, qtd2: -produto2Qnt, qtd3: -produto3Qnt} }, {new: true})
                       .then((teste) => {
-                        console.log('teste')
+                        console.log('Atualizou')
                       })
                       .catch((error) => {
                         console.log(error)
@@ -98,7 +99,7 @@ router.post('/cadastrar', (request, response) => {
                         console.log(error)
                         console.log( 'Erro ao setar null no descricaoServico')
                       })
-                      return response.status(201).send(criou)
+                      return response.status(201).send('Serviço criado com sucesso')
                     })
                     .catch((error) => {
                       console.log(error)
@@ -140,7 +141,7 @@ router.delete('/:id',(req,res)=>{
   const {descricaoServico} = req.query
   ServicoSchema.findByIdAndDelete(id)
   .then((Servico)=>{
-    res.status(200).send(Servico)
+    res.status(200).send("Serviço deletado com sucesso")
   })
   .catch((error)=>{
     res.status(400).send({error: 'ID não encontrado'})
@@ -150,10 +151,11 @@ router.delete('/:id',(req,res)=>{
 
 router.put('/:id',(req,res)=>{
   const id = req.params.id
-  const {nome,email,funcao} = req.body
-  ServicoSchema.findByIdAndUpdate(id, {nome, email, funcao},{new:true})
+  const {descricaoServico, produto1Qnt, produto2Qnt, produto3Qnt} = req.body
+  ServicoSchema.findByIdAndUpdate(id, {descricao: descricaoServico, produto1: produto1Qnt, produto2: produto2Qnt, produto3: produto3Qnt},{new:true})
   .then((Servico)=>{
-    res.status(200).send(Servico)
+    console.log(Servico)
+    res.status(200).send('Serviço atualizado com sucesso')
   })
   .catch((error)=>{
     res.status(400).send({error: 'ID não encontrado'})

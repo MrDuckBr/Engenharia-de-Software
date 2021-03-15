@@ -3,6 +3,7 @@ import mongoose from '@/database';
 const ServicoSchema = new mongoose.Schema({
   descricao: {
     type: String,
+    default: null
   },
   produto1: {
     type: String,

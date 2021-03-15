@@ -58,13 +58,10 @@ router.post('/login', (request, response) => {
   UserSchema.findOne({email})
   .select('+password')
   .then((user) => {
-        bcrypt.compare(password, user.password)
-        .then((result) => {
-            return response.status(200).send('Usuário Logado')
-        })
-        .catch((error) => {
-            return response.status(400).send('Senha incorreta')
-        })
+    if(password == user.password)
+      return response.status(200).send('Usuário Logado')
+    else
+      return response.status(400).send('Senha incorreta')
   })
   .catch((error) => {
       return response.status(400).send('Usuário inexistente')
