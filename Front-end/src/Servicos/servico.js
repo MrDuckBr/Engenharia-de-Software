@@ -9,6 +9,7 @@ function criaLinha(usuario){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdDescricao = document.createElement("td")
+    tdFuncionario = document.createElement("td")
     botao = document.createElement("button")
     botao.setAttribute('type','button')
     botao.appendChild(document.createTextNode('Atualizar'));
@@ -26,9 +27,11 @@ function criaLinha(usuario){
     }
     tdNome.innerHTML = usuario.nomeUser
     tdDescricao.innerHTML = usuario.descricao
+    tdFuncionario.innerHTML = usuario.nomeFunc
 
     linha.appendChild(tdNome)
     linha.appendChild(tdDescricao)
+    linha.appendChild(tdFuncionario)
     linha.appendChild(botao)
     linha.appendChild(button)
 
@@ -36,14 +39,17 @@ function criaLinha(usuario){
 }
 
 
-function criaLegenda(nome1, nome2){
+function criaLegenda(nome1, nome2, nome3){
     linha = document.createElement("tr")
     tdNome = document.createElement("td")
     tdDescricao = document.createElement("td")
+    tdFuncionario = document.createElement("td")
     tdNome.innerHTML = nome1
     tdDescricao.innerHTML = nome2
+    tdFuncionario.innerHTML = nome3
     linha.appendChild(tdNome)
     linha.appendChild(tdDescricao)
+    linha.appendChild(tdFuncionario)
     return linha
 }
 
@@ -55,7 +61,7 @@ function main(){
      
      let tabela = document.getElementById("table")
      tabela.innerHTML = ""
-     let legenda = criaLegenda("Usuário" , "Descricao")
+     let legenda = criaLegenda("Usuário" , "Descricao","Funcionario")
      tabela.appendChild(legenda)
      b.forEach(element => {
 
@@ -68,6 +74,11 @@ function main(){
      });
      
     
+}
+
+function page(){
+    main()
+    mostraDisponiveis()
 }
 
 
@@ -99,7 +110,7 @@ function mostraDisponiveis(){
      
      let tabela = document.getElementById("table-disponiveis")
      tabela.innerHTML = ""
-     let legenda = criaLegenda("Usuário" , "Descricao")
+     let legenda = criaLegenda("Usuário" , "Descricao", "")
      tabela.appendChild(legenda)
      b.forEach(element => {
 
@@ -120,6 +131,13 @@ function cadastrarServico(){
     let cimento = document.querySelector("#cimento")
     let form = document.querySelector("#form")
     let texto = document.querySelector("#caixa-texto")
+
+    // var e = document.getElementById("cb_catinsumo");
+    
+
+    let e = document.querySelector("#funcionario-combo")
+    var itemSelecionado = e.options[e.selectedIndex].text
+    console.log(e.length)
   
     form.addEventListener("submit",function(event){
         event.preventDefault();
@@ -235,4 +253,49 @@ function fazAtualiza(){
 
 function logout(){
     window.location.assign('../Index/index.html')
+}
+
+
+
+
+function combobox(){
+    let combo = document.getElementById("funcionario-combo")
+
+    const a = fazGet("http://localhost:3000/funcionario")
+    let b =JSON.parse(a)
+    
+    b.forEach(element => {
+        option = document.createElement("option")
+        option.innerHTML = element.nome
+        
+        
+        combo.appendChild(option)
+        
+    });
+
+}
+
+function adicionar(){
+    let combo = document.getElementById("table")
+
+    const a = fazGet("http://localhost:3000/funcionario")
+    let b =JSON.parse(a)
+    
+    b.forEach(element => {
+        option = document.createElement("option")
+        option.innerHTML = element.nome
+        
+        
+        combo.appendChild(option)
+        
+    });
+
+}
+
+
+function fazGet(url){
+    let request = new XMLHttpRequest()
+    request.open("GET",url,false)
+    request.send()
+    return  request.responseText
 }

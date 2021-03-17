@@ -70,6 +70,9 @@ function main(){
     
 }
 
+function pageAtualiza(){
+    main()
+}
 
 function criaLegenda(nome1, nome2, nome3){
     linha = document.createElement("tr")

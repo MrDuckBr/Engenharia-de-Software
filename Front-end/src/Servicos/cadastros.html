@@ -9,7 +9,7 @@
 
     <title>ConstruBem - Login</title>
 </head>
-<body>
+<body onload="combobox();">
 
     <div class="barra-titulo">
     <h1 class="titulo"> ConstruBem</h1>
@@ -23,31 +23,25 @@
         </div>
         <div class="caixa-centro">
             <div class="campo-centro">
-                <table>
+                <td class="campo-field">Produtos</td>
                     <form id="form" method="post">
-                <tr>
-                    <td class="campo-field" >Nome</td>
-                    <td class="campo-field" >Nome</td>
-                    <td class="campo-field" >Nome</td>
-                </tr>
-                <tr>
-                    <td><input type="text" class="campos" value="prego" disabled> </td>
-                    <td><input type="text" class="campos" value="tijolo" disabled> </td>
-                    <td><input type="text" class="campos" value="cimento" disabled> </td>
-                    
-                </tr>
-                <tr>
-                    <td class="campo-field">Quantidade</td>
-                    <td class="campo-field">Quantidade</td>
-                    <td class="campo-field">Quantidade</td>
-                </tr>
-                <tr>
-                    <td> <input id="prego" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                    <td> <input id="tijolo" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                    <td> <input id="cimento" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                </tr>
-                 
-                    </table>
+                        
+                        <button onclick="adicionar();">Adicionar</button>
+                        <table>
+                    <tr> 
+                        <td><select name="produtos-combo" id="produtos-combo" class="combo-produtos"></select></td>
+                        <td value = ""></td>
+                    </tr>
+                </table>
+                        
+
+
+                        <table>
+                    <tr>
+                        <td class="campo-field">Funcionario</td>
+                        <td><select name="funcionario-combo" id="funcionario-combo" class="combo-funcionario"></select></td>
+                    </tr>
+                </table>
                    <table>
                    <tr>
                     <td><input type="text" id="caixa-texto" class="caixa-texto"></td>

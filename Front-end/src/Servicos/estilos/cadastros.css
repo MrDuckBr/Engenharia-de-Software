@@ -158,3 +158,10 @@ button:hover{
 
 
 }
+
+
+.combo-funcionario{
+    border-radius: 20px;
+    height: 30%;
+    width: 70%;
+}
