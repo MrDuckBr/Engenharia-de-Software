@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema({
     solicitado: {
       type: Boolean,
       default: true
-    }
+    },
 });
 
 export default mongoose.model('User', UserSchema);

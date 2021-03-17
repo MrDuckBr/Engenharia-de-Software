@@ -162,4 +162,24 @@ router.put('/:id',(req,res)=>{
   })
 })
 
+
+/**
+ * router.post('/teste/:id', (request, response) => {
+  const {lista} = request.body
+  const id = request.params.id
+
+  UserSchema.findOne({_id:id})
+  .then((user) => {
+    console.log(user)
+    user.lista.push(lista)
+    
+    return response.send(user)
+  })
+  .catch((error) => {
+    console.log(error)
+    return response.send('nao foi')
+  })
+})
+ */
+
 export default router;

@@ -192,6 +192,7 @@ function fazAtualiza(idFunc){
 function atualizar(valor){
     console.log(valor + "arroz comi to com fome")
     console.log('valor'+ valor)
+
     window.location.assign('atualizarFuncionario.html?'+valor)
 
 
