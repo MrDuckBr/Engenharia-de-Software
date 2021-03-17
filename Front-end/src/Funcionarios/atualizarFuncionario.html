@@ -9,7 +9,7 @@
 
     <title>ConstruBem - Cadastro Funcionario</title>
 </head>
-<body>
+<body onload="page();">
 
     <div class="barra-titulo">
     <h1 class="titulo"> ConstruBem</h1>
@@ -24,11 +24,11 @@
         <div class="caixa-centro">
             <form id="form" >
             <div  class="campo-field" >Nome</div>
-            <input id="nome-campo" type="text" class="campos" required> 
+            <input id="nome-campo" type="text" class="campos" value="" required> 
             <div class="campo-field">Email</div> 
-            <input id="email-campo" type="text"  placeholder="nome@email.com" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required class="campos"> 
+            <input id="email-campo" type="text" value="" placeholder="nome@email.com" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required class="campos"> 
             <div class="campo-field">Função</div> 
-            <input id="funcao-campo" type="text" class="campos" required> 
+            <input id="funcao-campo" type="text" value="" class="campos" required> 
             <div><button id="post-btn" type="submit" class="botao-centro" onclick="fazAtualiza();" >Atualizar</button></div>
         </form>
         </div>

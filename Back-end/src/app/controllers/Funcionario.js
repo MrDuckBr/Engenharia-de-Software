@@ -40,13 +40,25 @@ router.delete('/:id',(req,res)=>{
 
 router.put('/:id',(req,res)=>{
   const id = req.params.id
-  const {nome, funcao} = req.body
-  FuncionarioSchema.findByIdAndUpdate(id, {nome, funcao},{new:true})
+  const {nome,email,funcao} = req.body
+  FuncionarioSchema.findByIdAndUpdate(id, {nome, email,funcao},{new:true})
   .then((funcionario)=>{
     res.status(200).send(`Funcionario ${funcionario.nome} atualizado`)
   })
   .catch((error)=>{
     res.status(400).send('Erro ao atualizar o funcionario')
+  })
+})
+
+
+router.get('/:id',(req,res)=>{
+  const id = req.params.id
+  FuncionarioSchema.findById(id)
+  .then((funcionario)=>{
+    res.status(200).send(funcionario)
+  })
+  .catch((error)=>{
+    res.status(400).send('Erro ao pegar o funcionario')
   })
 })
 

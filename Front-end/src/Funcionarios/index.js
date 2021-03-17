@@ -90,6 +90,7 @@ function criaLegenda(nome1, nome2, nome3){
 function fazerPost(){
   let name =  document.querySelector("#nome-campo")
    let func = document.querySelector("#funcao-campo")
+   let email = document.querySelector("#email-campo")
    let form = document.querySelector("#form")
 
    form.addEventListener("submit",function(event){
@@ -97,6 +98,7 @@ function fazerPost(){
 
        let dados = {
            nome: name.value,
+           email:email.value,
            funcao: func.value
        }
        console.log(JSON.stringify(dados))
@@ -154,6 +156,7 @@ function fazAtualiza(idFunc){
     
     let name =  document.querySelector("#nome-campo")
    let func = document.querySelector("#funcao-campo")
+   let email = document.querySelector("#email-campo")
    let form = document.querySelector("#form")
 
    form.addEventListener("submit",function(event){
@@ -161,6 +164,7 @@ function fazAtualiza(idFunc){
 
        let dados = {
            nome: name.value,
+           email:email.value,
            funcao: func.value
        }
        console.log(JSON.stringify(dados))
@@ -187,10 +191,26 @@ function fazAtualiza(idFunc){
 
 function atualizar(valor){
     console.log(valor + "arroz comi to com fome")
+    console.log('valor'+ valor)
     window.location.assign('atualizarFuncionario.html?'+valor)
-    
+
 
 }
+
+function page(){
+    const a = fazGet("http://localhost:3000/funcionario/" + window.location.search.substr(1).split('&') )
+    const func = JSON.parse(a)
+    console.log(func.nome)
+   
+    document.getElementById('nome-campo').value = func.nome
+    document.getElementById('email-campo').value = func.email
+    document.getElementById('funcao-campo').value = func.funcao
+
+}
+
+    
+
+
 
 
 

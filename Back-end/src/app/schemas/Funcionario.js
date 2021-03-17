@@ -12,6 +12,10 @@ const FuncionarioSchema = new mongoose.Schema({
   funcionario: {
     type: String,
   },
+  email:{
+    type: String,
+    required: true,
+  },
   avaiable: {
     type: Boolean,
     default: true
