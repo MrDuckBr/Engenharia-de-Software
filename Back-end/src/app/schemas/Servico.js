@@ -5,15 +5,6 @@ const ServicoSchema = new mongoose.Schema({
     type: String,
     default: null
   },
-  produto1: {
-    type: String,
-  },
-  produto2: {
-    type: String,
-  },
-  produto3: {
-    type: String,
-  },
   idUser: {
     type: String,
     required: true
@@ -22,8 +13,9 @@ const ServicoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  nomeUser: {
-    type: String,
+  produtos:{
+    type:Array,
+    required: true
   }
 });
 

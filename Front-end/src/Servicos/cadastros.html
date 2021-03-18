@@ -9,7 +9,7 @@
 
     <title>ConstruBem - Login</title>
 </head>
-<body onload="combobox();">
+<body onload="chamabox();">
 
     <div class="barra-titulo">
     <h1 class="titulo"> ConstruBem</h1>
@@ -18,33 +18,42 @@
     <div class="fundo">
         <div class="barra-lateral">
             <button class="botoes-lateral" onclick="funcionario();"> Funcionários</button> <br>
-            <button class="botoes-lateral">Produtos</button> <br>
+            <button class="botoes-lateral" onclick="usuariobox()">Produtos</button> <br>
             <button class="botoes-lateral" onclick="servico();">Serviços</button> <br>
         </div>
         <div class="caixa-centro">
             <div class="campo-centro">
-                <td class="campo-field">Produtos</td>
-                    <form id="form" method="post">
-                        
-                        <button onclick="adicionar();">Adicionar</button>
+                
+                    <form id="form">
                         <table>
+                        <td class="campoProdutos">Produtos</td>
+                        
+                    </table>
+                        <table>
+                            <button onclick="adicionar();" type="button">Adicionar</button>
                     <tr> 
-                        <td><select name="produtos-combo" id="produtos-combo" class="combo-produtos"></select></td>
-                        <td value = ""></td>
+                        <td id="produtos2"></td>
+                        
                     </tr>
                 </table>
-                        
-
-
                         <table>
                     <tr>
                         <td class="campo-field">Funcionario</td>
                         <td><select name="funcionario-combo" id="funcionario-combo" class="combo-funcionario"></select></td>
                     </tr>
                 </table>
+                <table>
+                    <tr>
+                        <td class="campo-field">Usuario</td>
+                        <td><select name="usuario-combo" id="usuario-combo" class="usuario-combo" onclick="clickUsuario()"></select></td>
+                    </tr>
+                </table>
+
+
                    <table>
-                   <tr>
-                    <td><input type="text" id="caixa-texto" class="caixa-texto"></td>
+                   
+                    <tr>
+                    <td><input type="text" id="caixa-texto" class="caixa-texto" placeholder="DESCRIÇÃO DO SERVIÇO"></td>
                     </tr>
                     <tr>
                     <td><button type="submit" class="botao-centro" onclick="cadastrarServico()">Cadastrar</button></td>
@@ -61,6 +70,8 @@
         </div>
 
     </div>
+
+
 
 
 </body>

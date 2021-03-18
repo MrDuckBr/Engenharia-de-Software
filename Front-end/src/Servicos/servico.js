@@ -126,28 +126,38 @@ function mostraDisponiveis(){
 
 
 function cadastrarServico(){
-    let prego = document.querySelector("#prego")
-    let tijolo = document.querySelector("#tijolo")
-    let cimento = document.querySelector("#cimento")
     let form = document.querySelector("#form")
     let texto = document.querySelector("#caixa-texto")
 
-    // var e = document.getElementById("cb_catinsumo");
+    //Produtos
+    let vet = []
+    const a = document.getElementById("produtos2")
+    const b = a.querySelectorAll("select")
+    b.forEach(element=>{
+        var itemSelecionado = element.options[element.selectedIndex].text
+        vet.push(itemSelecionado)
+    })
     
-
+//funcionario
     let e = document.querySelector("#funcionario-combo")
-    var itemSelecionado = e.options[e.selectedIndex].text
-    console.log(e.length)
-  
+    var funcionarioSelecionado = e.options[e.selectedIndex].text
+
+    let s = document.querySelector("#usuario-combo")
+    var usuarioSelecionado = s.options[s.selectedIndex].value
+
+
+
+  //comeca aqui
     form.addEventListener("submit",function(event){
         event.preventDefault();
 
        
         let dados = {
             descricaoServico: texto.value,
-            produto1Qnt: prego.value,
-            produto2Qnt: tijolo.value,
-            produto3Qnt: cimento.value
+            funcionario: funcionarioSelecionado,
+            produtos: vet,
+            usuario: usuarioSelecionado
+
         }
   
         console.log(JSON.stringify(dados))
@@ -240,6 +250,7 @@ function fazAtualiza(){
         xhr.onload = function () {
             
             if(xhr.status == 200){
+                console.log(xhr.responseText)
                 alert(xhr.responseText)
                 window.location.assign('dashBoard.html')
                 main()
@@ -256,7 +267,30 @@ function logout(){
 }
 
 
+function produtoBox(){
+    let combo = document.getElementById("produto-combo")
 
+    const a = fazGet("http://localhost:3000/produto")
+    let b =JSON.parse(a)
+    
+    b.forEach(element => {
+        option = document.createElement("option")
+        option.innerHTML = element.nome
+        
+        
+        combo.appendChild(option)
+        
+    });
+
+}
+
+function chamabox(){
+    usuariobox()
+    combobox()
+    produtoBox()
+    
+   
+}
 
 function combobox(){
     let combo = document.getElementById("funcionario-combo")
@@ -276,19 +310,22 @@ function combobox(){
 }
 
 function adicionar(){
-    let combo = document.getElementById("table")
+    let combo = document.getElementById("produtos2")
 
-    const a = fazGet("http://localhost:3000/funcionario")
+    const a = fazGet("http://localhost:3000/produto")
     let b =JSON.parse(a)
-    
+    select = document.createElement("select")
     b.forEach(element => {
+        
         option = document.createElement("option")
         option.innerHTML = element.nome
+        select.appendChild(option)
         
         
-        combo.appendChild(option)
+        
         
     });
+    combo.appendChild(select)
 
 }
 
@@ -298,4 +335,47 @@ function fazGet(url){
     request.open("GET",url,false)
     request.send()
     return  request.responseText
+}
+
+
+
+
+
+function usuariobox(){
+    let combo = document.getElementById("usuario-combo")
+
+    const a = fazGet("http://localhost:3000/servico/disponiveis")
+    let b =JSON.parse(a)
+    console.log(b)
+    
+    b.forEach(element => {
+        //if(b.descricaoServico != null){
+        option = document.createElement("option")
+        option.value = element._id
+        option.innerHTML = element.nome
+        //}
+        
+        
+        combo.appendChild(option)
+        
+    });
+
+}
+
+
+
+function clickUsuario(){
+    let e = document.querySelector("#usuario-combo")
+    var itemSelecionado = e.options[e.selectedIndex].text
+
+    let get = fazGet('http://localhost:3000/servico/disponiveis')
+    get = JSON.parse(get)
+    console.log(get)
+    console.log('TESTE')
+    get.forEach(element=>{
+        if(itemSelecionado == element.nome){
+            document.getElementById('caixa-texto').value = element.descricaoServico
+        }
+    })
+
 }

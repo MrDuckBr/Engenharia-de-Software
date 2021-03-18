@@ -165,3 +165,17 @@ button:hover{
     height: 30%;
     width: 70%;
 }
+
+
+.campoProdutos{
+    border-radius: 20px;
+    
+    
+    margin-left: 0%;
+    outline: none;
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
