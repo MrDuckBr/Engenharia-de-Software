@@ -24,7 +24,7 @@ function login(){
     xhr.onload = function () {
         if(xhr.status == 200){
             alert("Logado com Sucesso!")    
-            window.location.assign('http://localhost:5000/Servicos/dashBoard.html')
+            window.location.assign('../Servicos/dashBoard.html')
         }else{
             alert("Erro ao realizar o login: " + xhr.responseText)
            

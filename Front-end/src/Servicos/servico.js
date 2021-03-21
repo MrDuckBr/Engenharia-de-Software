@@ -178,7 +178,7 @@ function cadastrarServico(){
         console.log(xhr.status)
         if(xhr.status == 201){
             alert(xhr.responseText)
-            //window.location.assign('dashBoard.html')
+            window.location.assign('dashBoard.html')
         }else if(xhr.status == 400){
             alert(xhr.responseText)
         }
@@ -277,7 +277,7 @@ function fazAtualiza(){
         console.log(xhr.status)
         if(xhr.status == 200){
             alert(xhr.responseText)
-            //window.location.assign('dashBoard.html')
+            window.location.assign('dashBoard.html')
         }else if(xhr.status == 400){
             alert(xhr.responseText)
         }
