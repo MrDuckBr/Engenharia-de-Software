@@ -32,16 +32,38 @@ router.get('/cadastrados', (req, res) => {
   })
 });
 
+
+router.get('/:id', (req, res) => {
+  ServicoSchema.find()
+  .then((servico)=> {
+    //console.log(servico)
+    res.status(200).send(servico)
+  })
+  .catch((error)=>{
+    res.status(400).send({error: 'ID não encontrado'})
+  })
+});
+
+
+
 //Falta produtos e ver como sera o usuarioo
 router.post('/cadastrar', (request, res) => {
   const {descricaoServico,funcionario, produtos, usuario} = request.body
   //const {} = request.query
   //const {avaiable} = request.query
       ServicoSchema.create({descricao:descricaoServico, idUser:usuario, nomeFunc:funcionario, produtos})
+      
+      
       .then(() => {
         Funcionario.findOneAndUpdate({nome:funcionario},{avaiable: false}, {new:true})
           .then(()=>{
-               res.status(201).send('Cadastrado')
+            User.findByIdAndUpdate(usuario,{descricaoServico: null}, {new:true})
+            .then(()=>{
+              res.status(201).send('Cadastrado')
+            }).catch(()=>{
+              res.status(400).send('Erro ao encontrar o Usuario')
+            })
+              
           }).catch(()=>{
             res.status(400).send("funcionario deu ruim")
           })
@@ -79,8 +101,8 @@ router.delete('/:id',(req,res)=>{
 //Falta arrumar
 router.put('/:id',(req,res)=>{
   const id = req.params.id
-  const {descricaoServico, produto1Qnt, produto2Qnt, produto3Qnt} = req.body
-  ServicoSchema.findByIdAndUpdate(id, {descricao: descricaoServico, produto1: produto1Qnt, produto2: produto2Qnt, produto3: produto3Qnt},{new:true})
+  const {descricaoServico,funcionario, produtos, usuario} = req.body
+  ServicoSchema.findByIdAndUpdate(id, {descricao:descricaoServico, idUser:usuario, nomeFunc:funcionario, produtos },{new:true})
   .then((Servico)=>{
     //.log(Servico)
     res.status(200).send('Serviço atualizado com sucesso')

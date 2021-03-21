@@ -25,6 +25,9 @@ function criaLinha(usuario){
         console.log(usuario._id)
         deletar(usuario._id)
     }
+
+   // const user = fazGet('http://localhost:3000/user/' + usuario.id)
+
     tdNome.innerHTML = usuario.nomeUser
     tdDescricao.innerHTML = usuario.descricao
     tdFuncionario.innerHTML = usuario.nomeFunc
@@ -295,7 +298,7 @@ function chamabox(){
 function combobox(){
     let combo = document.getElementById("funcionario-combo")
 
-    const a = fazGet("http://localhost:3000/funcionario")
+    const a = fazGet("http://localhost:3000/funcionario/disponivel")
     let b =JSON.parse(a)
     
     b.forEach(element => {

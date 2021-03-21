@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
   })
 });
 
+router.get('/disponivel', (req, res) => {
+  FuncionarioSchema.find({ avaiable: { $ne: false } })
+  .then((funcionario)=> {
+    res.send(funcionario)
+  })
+  .catch((error)=>{
+    res.status(400).send({error: 'ID não encontrado'})
+  })
+});
+
+
+
 router.post('/', (request, response) => {
   const {nome, email,funcao} = request.body
 
