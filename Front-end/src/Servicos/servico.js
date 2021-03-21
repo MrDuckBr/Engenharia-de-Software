@@ -26,9 +26,10 @@ function criaLinha(usuario){
         deletar(usuario._id)
     }
 
-   // const user = fazGet('http://localhost:3000/user/' + usuario.id)
+    const user = fazGet('http://localhost:3000/user/' + usuario.idUser)
+    let b =JSON.parse(user)
 
-    tdNome.innerHTML = usuario.nomeUser
+    tdNome.innerHTML = b.nome
     tdDescricao.innerHTML = usuario.descricao
     tdFuncionario.innerHTML = usuario.nomeFunc
 
@@ -147,6 +148,7 @@ function cadastrarServico(){
 
     let s = document.querySelector("#usuario-combo")
     var usuarioSelecionado = s.options[s.selectedIndex].value
+    console.log(usuarioSelecionado)
 
 
 
@@ -224,44 +226,64 @@ function atualizar(valor){
 
 function fazAtualiza(){
     
-    let prego = document.querySelector("#prego")
-    let tijolo = document.querySelector("#tijolo")
-    let cimento = document.querySelector("#cimento")
     let form = document.querySelector("#form")
-    let texto = document.querySelector("#caixa-texto")
+    let texto = document.querySelector("#caixa-textoAtualiza")
 
-   form.addEventListener("submit",function(event){
-       event.preventDefault();
+    //Produtos
+    let vet = []
+    const a = document.getElementById("produtos2")
+    const b = a.querySelectorAll("select")
+    b.forEach(element=>{
+        var itemSelecionado = element.options[element.selectedIndex].text
+        vet.push(itemSelecionado)
+    })
+    
+//funcionario
+    let e = document.querySelector("#funcionario-combo")
+    var funcionarioSelecionado = e.options[e.selectedIndex].text
 
-       let dados = {
-        descricaoServico: texto.value,
-        produto1Qnt: prego.value,
-        produto2Qnt: tijolo.value,
-        produto3Qnt: cimento.value
-    }
+    let s = document.querySelector("#usuario-comboAtualiza")
+    var usuarioSelecionado = s.options[s.selectedIndex].value
 
-       console.log(JSON.stringify(dados))
-       console.log(window.location.search.substr(1).split('&'))
-        var xhr = new XMLHttpRequest();
-        xhr.open('PUT', "http://localhost:3000/servico/"+window.location.search.substr(1).split('&'));
-        xhr.setRequestHeader('Content-type', 'application/json')
+    const teste23 = fazGet("http://localhost:3000/servico/" + window.location.search.substr(1).split('&') )
+    console.log(window.location.search.substr(1).split('&'))
+    const usuariodoServico = JSON.parse(teste23)
+   // console.log(func[0].descricaoServico)
+
+
+  //comeca aqui
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+
        
-        
+        let dados = {
+            descricaoServico: texto.value,
+            funcionario: funcionarioSelecionado,
+            produtos: vet,
+            usuario: usuariodoServico[0].idUser
 
-        xhr.send(JSON.stringify(dados));
+        }
+  
+        console.log(JSON.stringify(dados))
+  
+  
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT', "http://localhost:3000/servico/"+ window.location.search.substr(1).split('&'));
+    xhr.setRequestHeader('Content-type', 'application/json')
+    
+    xhr.send(JSON.stringify(dados));
+    
+    xhr.onload = function () {
+        console.log(xhr.status)
+        if(xhr.status == 200){
+            alert(xhr.responseText)
+            //window.location.assign('dashBoard.html')
+        }else if(xhr.status == 400){
+            alert(xhr.responseText)
+        }
 
-        xhr.onload = function () {
-            
-            if(xhr.status == 200){
-                console.log(xhr.responseText)
-                alert(xhr.responseText)
-                window.location.assign('dashBoard.html')
-                main()
-            }else if(xhr.status == 400){
-                alert(xhr.responseText)
-            }
-        };
-     })
+    };
+    })
 }
 
 
@@ -381,4 +403,73 @@ function clickUsuario(){
         }
     })
 
+}
+
+
+
+
+function atualizapagina(){
+    const a = fazGet("http://localhost:3000/servico/" + window.location.search.substr(1).split('&') )
+    console.log(window.location.search.substr(1).split('&'))
+    const func = JSON.parse(a)
+    console.log(func[0].descricaoServico)
+   
+    comboAtualizaFuncionario(func[0].nomeFunc)
+    usuarioboxAtualiza(func[0].idUser)
+    //document.getElementById('caixa-textoAtualiza').value = func.descricaoServico
+    document.getElementById('caixa-textoAtualiza').value = func[0].descricao
+
+}
+
+
+
+
+
+function comboAtualizaFuncionario(valor){
+    console.log(valor)
+    let combo = document.getElementById("funcionario-combo")
+
+    const a = fazGet("http://localhost:3000/funcionario/disponivel")
+    let b =JSON.parse(a)
+    
+        option = document.createElement("option")
+        option.innerHTML = valor
+        combo.appendChild(option)
+
+    b.forEach(element => {
+        option = document.createElement("option")
+        option.innerHTML = element.nome
+        
+        
+        combo.appendChild(option)
+        
+    });
+}
+
+function usuarioboxAtualiza(valor){
+    console.log('Entrei aqui no usuario atualiza')
+    console.log(valor)
+    let combo = document.getElementById("usuario-comboAtualiza")
+
+    const a = fazGet("http://localhost:3000/user/" + valor)
+    let b =JSON.parse(a)
+    console.log(b)
+    
+   // b.forEach(element => {
+        //if(b.descricaoServico != null){
+        option = document.createElement("option")
+        option.value = b.nome
+        option.innerHTML = b.nome
+        
+        //}
+        
+        
+        combo.appendChild(option)
+        
+    //});
+}
+
+
+function chamaAtualiza(){
+    atualizapagina()
 }

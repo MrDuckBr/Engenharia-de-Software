@@ -9,48 +9,51 @@
 
     <title>ConstruBem - Login</title>
 </head>
-<body>
+<body onload="chamaAtualiza();">
 
     <div class="barra-titulo">
     <h1 class="titulo"> ConstruBem</h1>
-    <button class="button-titulo" onclick="logout();">Logout</button>
+    <button class="button-titulo" onclick="logout()">Logout</button>
     </div>
     <div class="fundo">
         <div class="barra-lateral">
             <button class="botoes-lateral" onclick="funcionario();"> Funcionários</button> <br>
-            <button class="botoes-lateral">Produtos</button> <br>
+            <button class="botoes-lateral" onclick="usuariobox()">Produtos</button> <br>
             <button class="botoes-lateral" onclick="servico();">Serviços</button> <br>
         </div>
         <div class="caixa-centro">
             <div class="campo-centro">
-                <table>
-                    <form id="form" method="post">
-                <tr>
-                    <td class="campo-field" >Nome</td>
-                    <td class="campo-field" >Nome</td>
-                    <td class="campo-field" >Nome</td>
-                </tr>
-                <tr>
-                    <td><input type="text" class="campos" value="prego" disabled> </td>
-                    <td><input type="text" class="campos" value="tijolo" disabled> </td>
-                    <td><input type="text" class="campos" value="cimento" disabled> </td>
-                    
-                </tr>
-                <tr>
-                    <td class="campo-field">Quantidade</td>
-                    <td class="campo-field">Quantidade</td>
-                    <td class="campo-field">Quantidade</td>
-                </tr>
-                <tr>
-                    <td> <input id="prego" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                    <td> <input id="tijolo" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                    <td> <input id="cimento" type="text"  type="text" required class="campos" pattern="[0-9]+$"> </td>  
-                </tr>
-                 
+                
+                    <form id="form">
+                        <table>
+                        <td class="campoProdutos">Produtos</td>
+                        
                     </table>
+                        <table>
+                            <button onclick="adicionar();" type="button">Adicionar</button>
+                    <tr> 
+                        <td id="produtos2"></td>
+                        
+                    </tr>
+                </table>
+                        <table>
+                    <tr>
+                        <td class="campo-field">Funcionario</td>
+                        <td><select name="funcionario-combo" id="funcionario-combo" class="combo-funcionario"></select></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="campo-field">Usuario</td>
+                        <td><select name="usuario-comboAtualiza" id="usuario-comboAtualiza" class="usuario-comboAtualiza" onclick="clickUsuario()"></select></td>
+                    </tr>
+                </table>
+
+
                    <table>
-                   <tr>
-                    <td><input type="text" id="caixa-texto" class="caixa-texto"></td>
+                   
+                    <tr>
+                    <td><input type="text" id="caixa-textoAtualiza" class="caixa-texto" placeholder="DESCRIÇÃO DO SERVIÇO"></td>
                     </tr>
                     <tr>
                     <td><button type="submit" class="botao-centro" onclick="fazAtualiza()">Atualizar</button></td>
@@ -67,6 +70,8 @@
         </div>
 
     </div>
+
+
 
 
 </body>

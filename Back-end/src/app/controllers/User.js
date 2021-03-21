@@ -79,6 +79,17 @@ router.delete('/:id',(req,res)=>{
   })
 })
 
+router.get('/:id', (req, res) => {
+ UserSchema.findById(req.params.id)
+  .then((servico)=> {
+    //console.log(servico)
+    res.status(200).send(servico)
+  })
+  .catch((error)=>{
+    res.status(400).send({error: 'ID não encontrado'})
+  })
+});
+
 
 router.put('/:id',(req,res)=>{
   const id = req.params.id
