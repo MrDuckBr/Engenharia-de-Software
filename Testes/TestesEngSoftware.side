@@ -1,0 +1,1188 @@
+{
+  "id": "258a4af4-1d70-4b69-9953-768a50d237dc",
+  "version": "2.0",
+  "name": "TestesEngSoftware",
+  "url": "http://localhost/Servicos/dashBoard.html",
+  "tests": [{
+    "id": "f7c390f5-0f47-4f42-a542-977ae61ce9b4",
+    "name": "CadastrarFuncionario",
+    "commands": [{
+      "id": "a9dee021-771e-45f9-a63e-82b654fc1f24",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Funcionarios/dashBoardFuncionario.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5de5b549-2807-4538-97a2-ecd954478fec",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b844c9b3-7f15-45a1-9167-c8e8c930cea5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=func",
+      "targets": [
+        ["id=func", "id"],
+        ["css=#func", "css:finder"],
+        ["xpath=//button[@id='func']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Funcionários')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae7c3f56-496d-4cf0-b38c-2bb22593c0cb",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.cadastrar",
+      "targets": [
+        ["css=.cadastrar", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href = 'cadastroFuncionario.html'\"]", "xpath:attributes"],
+        ["xpath=//button[5]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "67bc3d0e-2028-4350-844d-ba75aac68c66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cadastrar",
+      "targets": [
+        ["css=.cadastrar", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href = 'cadastroFuncionario.html'\"]", "xpath:attributes"],
+        ["xpath=//button[5]", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a17deaa-6124-40e9-9b73-2ffd8d05c38d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a03d382c-56a0-40de-bcd2-ba01c5a5cce9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=email-campo",
+      "targets": [
+        ["id=email-campo", "id"],
+        ["css=#email-campo", "css:finder"],
+        ["xpath=//input[@id='email-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "895f842f-05ae-415d-805f-b34508946769",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=funcao-campo",
+      "targets": [
+        ["id=funcao-campo", "id"],
+        ["css=#funcao-campo", "css:finder"],
+        ["xpath=//input[@id='funcao-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca8159ed-9eae-42f6-a24c-e5a1013f115e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=post-btn",
+      "targets": [
+        ["id=post-btn", "id"],
+        ["css=#post-btn", "css:finder"],
+        ["xpath=//button[@id='post-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "480d03bf-c81b-4f3a-8d30-3fde10e65119",
+      "comment": "",
+      "command": "click",
+      "target": "id=post-btn",
+      "targets": [
+        ["id=post-btn", "id"],
+        ["css=#post-btn", "css:finder"],
+        ["xpath=//button[@id='post-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "34d6e750-f0ee-4cf7-910f-6551b7ddf28e",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "911b09ee-d919-420b-8182-93f05c952002",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Boanerges"
+    }, {
+      "id": "9f2d0247-673a-49ec-a842-1186053fc2f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=email-campo",
+      "targets": [
+        ["id=email-campo", "id"],
+        ["css=#email-campo", "css:finder"],
+        ["xpath=//input[@id='email-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "boanerges@boanerges1.com"
+    }, {
+      "id": "7276b483-82e1-4306-b74f-d5abc8a56a2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=funcao-campo",
+      "targets": [
+        ["id=funcao-campo", "id"],
+        ["css=#funcao-campo", "css:finder"],
+        ["xpath=//input[@id='funcao-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Dev Senior"
+    }, {
+      "id": "40c262a9-2b93-42e6-892e-da873b868b28",
+      "comment": "",
+      "command": "click",
+      "target": "id=post-btn",
+      "targets": [
+        ["id=post-btn", "id"],
+        ["css=#post-btn", "css:finder"],
+        ["xpath=//button[@id='post-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5360a14d-fed4-43b9-9f04-3e94b3937c74",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(5) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(5) > td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='table']/tr[5]/td", "xpath:idRelative"],
+        ["xpath=//tr[5]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Boanerges')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "adeeb1a2-2c39-4253-b827-9e4f3ab0664c",
+    "name": "ListarFuncionarios",
+    "commands": [{
+      "id": "c5d3b8e2-0506-4157-a6ef-693c75bcaba3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Funcionarios/dashBoardFuncionario.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10da9fa7-77fd-41d7-a3dd-9c5cefff56aa",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "831fd450-e462-4bf7-aa6c-7df2a8c43fb0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=func",
+      "targets": [
+        ["id=func", "id"],
+        ["css=#func", "css:finder"],
+        ["xpath=//button[@id='func']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Funcionários')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d172d2ea-2c31-4e88-a150-8a8ad52b63f4",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='table']/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'FUNCIONÁRIO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2682dd94-54ab-43c6-a062-e432db448a00",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='table']/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'FUNÇÃO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bf1d504-67c1-483b-9db0-43b3f495eb5a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(3)", "css:finder"],
+        ["xpath=//table[@id='table']/tr/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'DISPONIBILIDADE')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "00de8377-be64-4bbb-9e52-83eaa75075fc",
+    "name": "Atualizar Funcionario",
+    "commands": [{
+      "id": "118e3d92-3228-417e-9f81-3f2fd7558ce7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Funcionarios/dashBoardFuncionario.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca946de9-f8a8-46b3-8587-a362861b911a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1f4893c-9a13-48a4-9221-48f42b18a1d7",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=func",
+      "targets": [
+        ["id=func", "id"],
+        ["css=#func", "css:finder"],
+        ["xpath=//button[@id='func']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Funcionários')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "949e40c7-8ffc-46fe-9a2c-4581235e50e9",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62e39268-4447-4a09-a351-22dacd100bd7",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf541668-2a29-4853-b19d-13f614553450",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > button:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b895efc-fda1-441e-9417-006cf08faf04",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe2ee6f8-928c-4aff-927e-824716630c47",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=email-campo",
+      "targets": [
+        ["id=email-campo", "id"],
+        ["css=#email-campo", "css:finder"],
+        ["xpath=//input[@id='email-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16f2e460-d732-4705-9dff-c0a6d2bf33e1",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=funcao-campo",
+      "targets": [
+        ["id=funcao-campo", "id"],
+        ["css=#funcao-campo", "css:finder"],
+        ["xpath=//input[@id='funcao-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38fb6d30-fb94-4d5d-ab28-026a18b86839",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10b66aa4-0079-42d2-99f7-c9abf6a0a18a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=post-btn",
+      "targets": [
+        ["id=post-btn", "id"],
+        ["css=#post-btn", "css:finder"],
+        ["xpath=//button[@id='post-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "346fa8f6-91c2-4320-af4d-c6387356f41f",
+      "comment": "",
+      "command": "click",
+      "target": "id=form",
+      "targets": [
+        ["id=form", "id"],
+        ["css=#form", "css:finder"],
+        ["xpath=//form[@id='form']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d78c7b7f-1351-4536-922b-93c0deaa292a",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome-campo",
+      "targets": [
+        ["id=nome-campo", "id"],
+        ["css=#nome-campo", "css:finder"],
+        ["xpath=//input[@id='nome-campo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Caio caio caio"
+    }, {
+      "id": "46ffd97e-8f62-42b8-8177-9ee0b97cc35e",
+      "comment": "",
+      "command": "click",
+      "target": "id=post-btn",
+      "targets": [
+        ["id=post-btn", "id"],
+        ["css=#post-btn", "css:finder"],
+        ["xpath=//button[@id='post-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cac5eea-1233-49cd-b9f3-9f01d9a582ef",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Funcionario Caio caio caio atualizado",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a614ddd5-952c-4d3d-8bf7-905388509007",
+    "name": "DeletarFuncionario",
+    "commands": [{
+      "id": "a9e89c2c-beba-4478-a2aa-402e4760e9c9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Funcionarios/dashBoardFuncionario.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3add77f8-44c1-4672-99bf-69612c6d69a6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d20bc12-03df-4009-8e0b-192c2956f0a9",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=func",
+      "targets": [
+        ["id=func", "id"],
+        ["css=#func", "css:finder"],
+        ["xpath=//button[@id='func']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Funcionários')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2336bea5-2d3f-456d-802e-1e4a09b636d2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aff43ef4-95e0-4c59-a51f-70ab0c3ac064",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1acda116-dafa-45ef-b1d3-52caa6925757",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > button:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "25789ef8-ef30-44d3-82a6-0b6e5259b448",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Funcionario Caio caio caio deletado",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "22af121f-bd5a-4214-96c8-f719173aac47",
+    "name": "CadastrarServico",
+    "commands": [{
+      "id": "51807b35-9e2b-416a-a9c6-d20a649f8474",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Servicos/dashBoard.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa97aaa4-053b-4dda-93a9-5f6abe343179",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5cc81c23-d2de-435a-bb48-69be449cfd11",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr > button:nth-child(3)",
+      "targets": [
+        ["css=tr > button:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='table-disponiveis']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//table[2]/tr[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c12a297-6818-4782-ac3a-03361cf8a21a",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr > button:nth-child(3)",
+      "targets": [
+        ["css=tr > button:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='table-disponiveis']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//table[2]/tr[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a569fdcc-0a93-4c69-95b8-e8d5df3cc219",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "59daf23a-0a91-4b35-83a1-62024e667c7a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'a')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "459d7524-3c98-4af7-acf6-96cf245b36dc",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=usuario-combo",
+      "targets": [
+        ["id=usuario-combo", "id"],
+        ["name=usuario-combo", "name"],
+        ["css=#usuario-combo", "css:finder"],
+        ["xpath=//select[@id='usuario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[4]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//table[4]/tbody/tr/td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Caio da silva sauro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ed7f581-021e-48c5-99fb-5c77270295e4",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=caixa-texto",
+      "targets": [
+        ["id=caixa-texto", "id"],
+        ["css=#caixa-texto", "css:finder"],
+        ["xpath=//input[@id='caixa-texto']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7443d8c1-da36-4413-a4bd-371067cae161",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.botao-centro",
+      "targets": [
+        ["css=.botao-centro", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr[2]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "055c6182-2e1b-4b2c-8de8-4b2b915b1cd8",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35cd3e8b-71fb-4211-b453-d505bfc3b507",
+      "comment": "",
+      "command": "click",
+      "target": "css=#produtos2 > select",
+      "targets": [
+        ["css=#produtos2 > select", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b2e2f98-b182-4315-b56c-2a3717ad6fc6",
+      "comment": "",
+      "command": "select",
+      "target": "css=#produtos2 > select",
+      "targets": [],
+      "value": "label=ProdutoDoCaio"
+    }, {
+      "id": "78eb5076-f3a7-4bac-9751-980a52f98904",
+      "comment": "",
+      "command": "click",
+      "target": "css=#produtos2 > select",
+      "targets": [
+        ["css=#produtos2 > select", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42338913-17aa-4d51-b1d3-1f31acd33a52",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f36b70eb-43bb-4186-9cab-8ad30f25a464",
+      "comment": "",
+      "command": "click",
+      "target": "css=select:nth-child(2)",
+      "targets": [
+        ["css=select:nth-child(2)", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e25c3b83-0e4b-49bf-a3c7-6207f9b31a85",
+      "comment": "",
+      "command": "select",
+      "target": "css=select:nth-child(2)",
+      "targets": [],
+      "value": "label=Produto3"
+    }, {
+      "id": "6f46888c-c33f-4f38-8e8e-527a841b1dea",
+      "comment": "",
+      "command": "click",
+      "target": "css=select:nth-child(2)",
+      "targets": [
+        ["css=select:nth-child(2)", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dba75788-0a76-4214-8306-be500b7f6375",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "912a3f59-bd87-4712-8574-6e7b411f1e5d",
+      "comment": "",
+      "command": "click",
+      "target": "css=select:nth-child(3)",
+      "targets": [
+        ["css=select:nth-child(3)", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select[3]", "xpath:idRelative"],
+        ["xpath=//select[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8fdc816-dca8-4f35-81ec-9443b795a4a9",
+      "comment": "",
+      "command": "select",
+      "target": "css=select:nth-child(3)",
+      "targets": [],
+      "value": "label=Produto2"
+    }, {
+      "id": "ae631e97-110d-47e2-8d8e-dcef73047d83",
+      "comment": "",
+      "command": "click",
+      "target": "css=select:nth-child(3)",
+      "targets": [
+        ["css=select:nth-child(3)", "css:finder"],
+        ["xpath=//td[@id='produtos2']/select[3]", "xpath:idRelative"],
+        ["xpath=//select[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8af9abcf-051c-43ab-abad-9901ba0fed10",
+      "comment": "",
+      "command": "click",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fad61df8-a5ab-4e32-bfed-dab1ab5df5e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e28acb6-fb6b-4e74-9b57-3b56cd392f42",
+      "comment": "",
+      "command": "click",
+      "target": "id=usuario-combo",
+      "targets": [
+        ["id=usuario-combo", "id"],
+        ["name=usuario-combo", "name"],
+        ["css=#usuario-combo", "css:finder"],
+        ["xpath=//select[@id='usuario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[4]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//table[4]/tbody/tr/td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Caio da silva sauro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b470de1-2b4a-4083-955a-f1357979c230",
+      "comment": "",
+      "command": "click",
+      "target": "id=usuario-combo",
+      "targets": [
+        ["id=usuario-combo", "id"],
+        ["name=usuario-combo", "name"],
+        ["css=#usuario-combo", "css:finder"],
+        ["xpath=//select[@id='usuario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[4]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//table[4]/tbody/tr/td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Caio da silva sauro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75254ba9-93a6-420c-be53-58daa03afc46",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-centro",
+      "targets": [
+        ["css=.botao-centro", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr[2]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "792c055c-9b53-43b6-8248-01fef3c72044",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Cadastrado",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7d5691ec-1ff9-4de8-8205-f6ccae30c422",
+    "name": "Atualizar Servico",
+    "commands": [{
+      "id": "0ec9b7a3-5e79-460b-8026-2ba1ccfeaedf",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Servicos/dashBoard.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bc6d706-403f-460a-a84f-0e6ffcb534a6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "073aa334-f045-4c7a-a643-80fec0d0328a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1697f0ba-d427-4537-abbb-d6d13f0acaee",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > button:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f63d9e7e-fed3-480b-90ba-6d1f83f9a163",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "356211d6-d174-48e9-b3ed-d026012df769",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Joao')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f3ac626-b836-4555-bf7d-8c06dff306b8",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=usuario-comboAtualiza",
+      "targets": [
+        ["id=usuario-comboAtualiza", "id"],
+        ["name=usuario-comboAtualiza", "name"],
+        ["css=#usuario-comboAtualiza", "css:finder"],
+        ["xpath=//select[@id='usuario-comboAtualiza']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[4]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//table[4]/tbody/tr/td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'walisson')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e045b869-c44a-40fd-ab1d-15dbcb2d1380",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=caixa-textoAtualiza",
+      "targets": [
+        ["id=caixa-textoAtualiza", "id"],
+        ["css=#caixa-textoAtualiza", "css:finder"],
+        ["xpath=//input[@id='caixa-textoAtualiza']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d09c24f5-1aef-4092-8030-4c133ac1a0cb",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.botao-centro",
+      "targets": [
+        ["css=.botao-centro", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr[2]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "81e8825d-ff45-4070-9cf3-cbf242c99d8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "241cd1a8-601b-425b-b70c-57b50ec2dcc1",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22177f4f-ce3b-46ed-bfe0-52adb808628e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a0bd148-3c72-4dd8-ba06-5e5b1c2d427c",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ecf73f7-5883-447f-ae07-d40af243b73c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7503fb6d-610f-4511-9cc3-7f4f58c52ec5",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=#form > button",
+      "targets": [
+        ["css=#form > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92ef9bca-7d51-4c8f-8cf4-b61b9c5d20bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.caixa-centro",
+      "targets": [
+        ["css=.caixa-centro", "css:finder"],
+        ["xpath=//div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57d10e56-b4e3-4aac-86a9-c2a861020323",
+      "comment": "",
+      "command": "type",
+      "target": "id=caixa-textoAtualiza",
+      "targets": [
+        ["id=caixa-textoAtualiza", "id"],
+        ["css=#caixa-textoAtualiza", "css:finder"],
+        ["xpath=//input[@id='caixa-textoAtualiza']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Atualizeiaqui2"
+    }, {
+      "id": "877e2e66-9f34-4bba-a888-2f6b1616b5f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Joao')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fedb130-07c9-45b3-85ba-09eee985f576",
+      "comment": "",
+      "command": "click",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Joao')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bd89513-d39b-48ad-97bc-8c57eb337c50",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=funcionario-combo",
+      "targets": [
+        ["id=funcionario-combo", "id"],
+        ["name=funcionario-combo", "name"],
+        ["css=#funcionario-combo", "css:finder"],
+        ["xpath=//select[@id='funcionario-combo']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[3]/tbody/tr/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Joao')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "446944b1-3831-4d3b-89eb-2a6ed5b8eb44",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-centro",
+      "targets": [
+        ["css=.botao-centro", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form']/table[5]/tbody/tr[2]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Atualizar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b35fd70d-9a6d-4050-9399-f24be28c5bb9",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Serviço atualizado com sucesso",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a9d297ad-baf3-414c-afc2-7ededb04e813",
+    "name": "DeletarServico",
+    "commands": [{
+      "id": "691bccef-9138-456a-bc69-a2f8028e7721",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Servicos/dashBoard.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c42cc77b-02d0-44d6-be02-388a76160758",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f631ce6-3357-445d-8eca-854b176ca298",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=tr:nth-child(2) > button:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c5c9ae4-d606-4329-8033-fcf4535e1371",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > button:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(2) > button:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//table[@id='table']/tr[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06e95dc9-1213-4fae-ada8-5ef1aa8977a0",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Serviço deletado com sucesso",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1e051eba-5860-4641-88ea-9da5e0e6e91a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost/Funcionarios/dashBoardFuncionario.html", "http://localhost/Servicos/dashBoard.html"],
+  "plugins": []
+}

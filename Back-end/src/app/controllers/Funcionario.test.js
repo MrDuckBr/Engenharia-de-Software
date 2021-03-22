@@ -7,7 +7,7 @@ describe('Teste das rotas de funcionários', () => {
         .get('/funcionario/')
         expect(res.statusCode).toEqual(200)
     })
-    it('criar funcuinario', async () => {
+    it('criar funcinario', async () => {
         const res = await request(app)
         .post('/funcionario/')
         .send({
