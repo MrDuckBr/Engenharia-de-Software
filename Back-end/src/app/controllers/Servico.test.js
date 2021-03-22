@@ -21,9 +21,11 @@ describe('Teste das rotas de servicos', () => {
         const res = await request(app)
         .put('/servico/604fc7ec61c89d15a3f2f2df')
         .send({
-            nome: 'teste',
-            email: 'teste@teste.com',
-            funcao: 'teste'
+           descricao: "descricao qualquer",
+           nomeFunc:"Joao",
+           produtos:["Areia","Prego","Tijolo"],
+           idUser:""
+
         })
         expect(res.statusCode).toEqual(200)
     })
